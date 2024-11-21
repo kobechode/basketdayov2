@@ -24,10 +24,7 @@
 
     }
 
-.pr1{
 
-    margin-top: 10rem;
-}
 
 }
 
@@ -89,9 +86,7 @@ padding: 12rem;
     
 }
 
- .pr2{
-    margin-top: 10rem;
- }
+ 
 
 .pr2>p{
 
@@ -244,6 +239,10 @@ margin-top: -11rem;
                 .projects__wrapper {
                     padding: 3rem 1.5rem;
                 }
+                .pr1{
+
+                    margin-top: 10rem;
+                }
             }
             
             @media (max-width: 768px) {
@@ -254,12 +253,20 @@ margin-top: -11rem;
                     grid-template-columns: 1fr; /* Single column layout */
                     gap: 1.5rem;
                 }
+                .pr1{
+
+                    margin-top: 10rem;
+                }
             }
             
             @media (max-width: 480px) {
                 .container h1 {
                     font-size: 8vw;
                     padding: 1.5rem;
+                }
+                .pr1{
+
+                    margin-top: 10rem;
                 }
                 .pr1>p, .pr2>p, .pr3>p, .pr4>p {
                     font-size: 1rem; /* Adjusted for smaller screens */

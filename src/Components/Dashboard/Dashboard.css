@@ -118,6 +118,11 @@ font-style: oblique;
   .card-content {
     padding: 1.5rem;
   }
+  .myslider{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  }
 }
 
 /* For Mobile Phones and Smaller Devices */

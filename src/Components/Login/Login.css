@@ -99,3 +99,51 @@
     .login-links a:hover {
       color: #0056b3;
     }
+
+    @media screen and (max-width: 768px) {
+      .login-container {
+        padding: 20px;
+        width: 90%; /* Make it wider to fill the screen */
+      }
+    
+      h2 {
+        font-size: 1.5rem;
+      }
+    
+      input[type="text"],
+      input[type="password"] {
+        font-size: 0.9rem;
+        padding: 8px;
+      }
+    
+      .login-btn {
+        font-size: 0.9rem;
+        padding: 8px;
+      }
+    }
+    
+    /* For Mobile Devices */
+    @media screen and (max-width: 480px) {
+      .login-container {
+        padding: 15px;
+      }
+    
+      h2 {
+        font-size: 1.2rem;
+      }
+    
+      input[type="text"],
+      input[type="password"] {
+        font-size: 0.8rem;
+        padding: 6px;
+      }
+    
+      .login-btn {
+        font-size: 0.8rem;
+        padding: 6px;
+      }
+    
+      .login-links a {
+        font-size: 0.9rem;
+      }
+    }

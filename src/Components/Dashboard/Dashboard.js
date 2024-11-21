@@ -67,7 +67,7 @@ export default function DashboardJs(){
 
  </div> */}
           
-<div class="my-slider flex gap-12">
+<div class="my-slider flex gap-12 ">
 
                      
                     <div class="Img1">
