@@ -6,6 +6,8 @@ import DashboardJs from './Components/Dashboard/Dashboard';
 import SignUp from './Components/Login/SignUp/SignUp';
 import Dashboard from './Components/Dashboard/Dashboard';
 import PickupDashboard from './Components/PickupGames/PickupDashboard';
+import WsbcReg from './Components/WSBC_REGFORM/Wsbc_Form';
+import WcbaReg from './Components/WCBA_REGFORM/Wcba_form';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path="/dashboard" element={<DashboardJs/>} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/PickupDash" element={<PickupDashboard />} />
+        <Route path="/wsbcreg" element={<WsbcReg />} />
+        <Route path="/wcbareg" element={<WcbaReg />} />
       </Routes>
     </Router>
     </div>

@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from 'firebase/auth';
+import { getAuth } from 'firebase/auth'; 
+import { getFirestore } from "firebase/firestore";
 
 
 const firebaseConfig = {
@@ -11,6 +12,19 @@ const firebaseConfig = {
     appId: "1:1024636462947:web:17c0a3a04b398d9be79556"
   };
 
+// const firebaseConfig = {
+//   apiKey: "AIzaSyAC1wBAxY2f85S8QZfv-ei7AlbhGFXb-fE",
+//   authDomain: "basketdayov2.firebaseapp.com",
+//   projectId: "basketdayov2",
+//   storageBucket: "basketdayov2.firebasestorage.app",
+//   messagingSenderId: "901401910725",
+//   appId: "1:901401910725:web:4b31194f0f5e763cda7fac"
+// };
+
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
-  export { auth };
+  const db = getFirestore(app)
+  export { auth,db};
+   
+ 
+ 

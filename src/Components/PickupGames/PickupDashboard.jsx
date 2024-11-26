@@ -1,6 +1,7 @@
 import './Pickup.css';
 
-
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const PickupDashboard = () =>{
 
@@ -35,7 +36,8 @@ const PickupDashboard = () =>{
  <div class="desc1">
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
  </div>
- <a href="https://kobechode.github.io/Monstercrat/">Join Now </a>
+ 
+ <Link to="/wsbcreg">Join now</Link>
 </div>
 
 
@@ -50,7 +52,7 @@ const PickupDashboard = () =>{
 
 </div>
 
-<a href="https://kobechode.github.io/nev2/">Join Now</a>
+<Link to="/wcbareg">Join now</Link>
 </div>
 
 <div class="pr3">
@@ -68,7 +70,7 @@ const PickupDashboard = () =>{
 <div class="pr4">
 
   <img class="w-[550px] h-[450px]"  src="https://github.com/kobechode/CCT2/blob/master/Ayala.png?raw=true" alt=""></img>
-<p>Homecredit Website</p>
+<p>Ayala Ballers</p>
 <div class="desc4">
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
 
