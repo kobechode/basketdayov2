@@ -15,9 +15,9 @@ const WsbcReg = () => {
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent form refresh
     const currentDate = new Date();
-    const formattedDate = currentDate.toISOString().split('T')[0]; // Format as YYYY-MM-DD
+    const formattedTime = currentDate.toISOString().split('T')[1].split('.')[0].replace(/:/g, '-');
 
-    const docRef = doc(db, "Basketdayo","Wsbc","Games_Played","111");  // Define document reference
+    const docRef = doc(db, "Basketdayo", "Wsbc", "Games_Played", `${formattedTime}_Wsbc`);  // Define document reference
     
     try {
       await setDoc(docRef, {
