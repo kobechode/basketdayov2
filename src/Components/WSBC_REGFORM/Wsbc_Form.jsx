@@ -25,7 +25,7 @@ const WsbcReg = () => {
     };
     const formattedTime = currentDate.toLocaleString('en-US', options).replace(/:/g, '-'); // Replace colons with dashes
 
-    const docRef = doc(db, "Basketdayo", "Wsbc", "Games_Played", `${formattedDate}_${formattedTime}_Wsbc`);  // Define document reference
+    const docRef = doc(db, "Basketdayo", "Wsbc",`${formattedDate}_Registered_Players`, `${firstname}_${lastname}`);  // Define document reference
     
     try {
       await setDoc(docRef, {
