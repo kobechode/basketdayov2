@@ -42,7 +42,7 @@ const WsbcReg = () => {
   };
 
   return (
-    <div className="signup-container">
+    <div className="signup-container_Wsbc">
       <img
         className="w-[350px] h-[150px]"
         src="https://github.com/kobechode/CCT2/blob/master/WSBC2.png?raw=true"
@@ -90,7 +90,7 @@ const WsbcReg = () => {
             required
           />
         </div>
-        <button type="submit" className="signup-button">
+        <button type="submit" className="signup-button_Wsbc">
           Sign Up
         </button>
       </form>

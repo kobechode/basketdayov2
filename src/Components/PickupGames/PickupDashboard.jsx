@@ -63,7 +63,7 @@ const PickupDashboard = () =>{
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
 
 </div>
-<a href="https://kobechode.github.io/Physionics/">Join Now </a>
+<Link to="/teachersreg">Join now</Link>
 </div>
 
 
@@ -75,7 +75,7 @@ const PickupDashboard = () =>{
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
 
 </div>
-<a href="https://kobechode.github.io/Homecredit/">Join Now </a>
+<Link to="/ayalareg">Join now</Link>
 </div>
 
 
