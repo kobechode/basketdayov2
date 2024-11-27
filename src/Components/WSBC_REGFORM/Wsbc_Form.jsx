@@ -14,8 +14,10 @@ const WsbcReg = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent form refresh
+    const currentDate = new Date();
+    const formattedDate = currentDate.toISOString().split('T')[0]; // Format as YYYY-MM-DD
 
-    const docRef = doc(db, "Basketdayo", "Wsbc");  // Define document reference
+    const docRef = doc(db, "Basketdayo","Wsbc","Games_Played","111");  // Define document reference
     
     try {
       await setDoc(docRef, {
@@ -23,7 +25,7 @@ const WsbcReg = () => {
         Lastname: lastname,
         Email: email,
         ContactNumber: contactnum,
-      });
+      },{ merge: true});
       console.log("Document written successfully!");
       navigate("/success");  // Navigate to a success page
     } catch (error) {
