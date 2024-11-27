@@ -15,9 +15,17 @@ const WsbcReg = () => {
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent form refresh
     const currentDate = new Date();
-    const formattedTime = currentDate.toISOString().split('T')[1].split('.')[0].replace(/:/g, '-');
+    const formattedDate = currentDate.toISOString().split('T')[0]; // YYYY-MM-DD
+    const options = {
+      timeZone: 'Asia/Manila',
+      hour12: false, // Use 24-hour format
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    };
+    const formattedTime = currentDate.toLocaleString('en-US', options).replace(/:/g, '-'); // Replace colons with dashes
 
-    const docRef = doc(db, "Basketdayo", "Wsbc", "Games_Played", `${formattedTime}_Wsbc`);  // Define document reference
+    const docRef = doc(db, "Basketdayo", "Wsbc", "Games_Played", `${formattedDate}_${formattedTime}_Wsbc`);  // Define document reference
     
     try {
       await setDoc(docRef, {
