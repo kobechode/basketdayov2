@@ -128,7 +128,10 @@ font-style: oblique;
  
   }  
 
- 
+  .my-slider .Img1 .Img2 .Img3{
+
+    font-size: 4rem;
+   }
  
  
    
@@ -153,5 +156,8 @@ font-style: oblique;
     margin-top: 32rem;
  
   }  
-   
+   .my-slider .Img1 .Img2 .Img3{
+
+    font-size: 4rem;
+   }
 }
