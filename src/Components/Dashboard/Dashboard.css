@@ -136,30 +136,22 @@ font-style: oblique;
 
 /* For Mobile Phones and Smaller Devices */
 @media screen and (max-width: 480px) {
-  .Img1, .Img2, .Img3 {
-    max-width: 100%; 
- 
-  
- 
-    
-    
-    /* Take full width of container */
-  }
   .Img1 > h1 {
-    font-size: 2rem;
+    font-size: 3rem;
   }
   .Title {
-    font-size: 1.2rem;
-    padding: 1rem;
+    font-size: 1.5rem;
+    padding: 1.5rem;
   }
   .card-content {
-    padding: 1rem;
-    
+    padding: 1.5rem;
   }
-
   .my-slider{
-    display: block;
-
-  }
+    padding: 11rem;
+    flex-wrap: wrap;
+    gap: 4rem;
+    margin-top: 24rem;
+ 
+  }  
    
 }
