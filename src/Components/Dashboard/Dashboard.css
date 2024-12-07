@@ -121,15 +121,16 @@ font-style: oblique;
     padding: 1.5rem;
   }
   .my-slider{
-    display: block;
+    padding: 11rem;
     flex-wrap: wrap;
     gap: 4rem;
+    margin-top: 24rem;
  
   }  
 
  
  
-  
+ 
    
 }
 
@@ -137,6 +138,7 @@ font-style: oblique;
 @media screen and (max-width: 480px) {
   .Img1, .Img2, .Img3 {
     max-width: 100%; 
+ 
   
  
     
@@ -152,11 +154,12 @@ font-style: oblique;
   }
   .card-content {
     padding: 1rem;
+    
   }
 
   .my-slider{
     display: block;
-  
-     
+
   }
+   
 }
