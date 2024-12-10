@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { db, app } from "../../Firebaseconfig"; // Firebase config
 import { doc, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import emailjs from '@emailjs/browser';
+ 
 import "./Wsbc.css";
 
 const WsbcReg = () => {
@@ -23,6 +25,8 @@ const WsbcReg = () => {
       minute: '2-digit',
       second: '2-digit'
     };
+
+   
     const formattedTime = currentDate.toLocaleString('en-US', options).replace(/:/g, '-'); // Replace colons with dashes
 
     const docRef = doc(db, "Basketdayo", "Wsbc",`${formattedDate}_Registered_Players`, `${firstname}_${lastname}`);  // Define document reference
@@ -39,7 +43,34 @@ const WsbcReg = () => {
     } catch (error) {
       setError("Error writing document: " + error.message);
     }
-  };
+ 
+     
+    const templateParams = {
+      firstname: firstname,
+      email: email,
+    
+    };
+    
+    emailjs.send('service_615y0s3', 'template_ytravfs',templateParams, {
+          publicKey: 'VQdPf1Ssy_pj3-ern',
+
+          firstname: firstname,
+          email: email,
+
+          
+        })
+        .then(
+          () => {
+            console.log('SUCCESS!');
+            alert("tae")
+          },
+          (error) => {
+            console.log('FAILED...', error.text);
+          },
+        );
+    };
+
+  
 
   return (
     <div className="signup-container_Wsbc">
