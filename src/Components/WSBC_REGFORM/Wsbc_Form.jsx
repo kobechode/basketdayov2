@@ -62,7 +62,7 @@ const WsbcReg = () => {
         .then(
           () => {
             console.log('SUCCESS!');
-            alert("tae")
+            alert("success")
           },
           (error) => {
             console.log('FAILED...', error.text);
