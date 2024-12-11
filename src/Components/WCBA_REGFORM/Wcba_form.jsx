@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { database,app } from '../../Firebaseconfig'; // Firebase config
 import { db } from "../../Firebaseconfig"; // Firebase config
 import { doc, setDoc } from "firebase/firestore";
+import emailjs from '@emailjs/browser';
  
  
 import "./wcba.css";
@@ -47,8 +48,35 @@ const WcbaReg = () => {
     } catch (error) {
       setError("Error writing document: " + error.message);
     }
+
+    const templateParams = {
+      firstname: firstname,
+      email: email,
+      lastname:lastname
+    
+    };
+    
+    emailjs.send('service_615y0s3', 'template_iotobqh',templateParams, {
+          publicKey: 'VQdPf1Ssy_pj3-ern',
+
+          firstname: firstname,
+          email: email,
+
+          
+        })
+        .then(
+          () => {
+            console.log('SUCCESS!');
+            alert("success")
+          },
+          (error) => {
+            console.log('FAILED...', error.text);
+          },
+        );
   
   };
+
+  
 
 
   return (

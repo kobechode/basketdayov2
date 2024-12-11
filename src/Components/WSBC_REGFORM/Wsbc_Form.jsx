@@ -39,7 +39,7 @@ const WsbcReg = () => {
         ContactNumber: contactnum,
       },{ merge: true});
       console.log("Document written successfully!");
-      navigate("/success");  // Navigate to a success page
+      navigate("/PickupDash");  // Navigate to a success page
     } catch (error) {
       setError("Error writing document: " + error.message);
     }
@@ -48,6 +48,7 @@ const WsbcReg = () => {
     const templateParams = {
       firstname: firstname,
       email: email,
+      lastname:lastname
     
     };
     
