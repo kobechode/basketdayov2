@@ -133,5 +133,20 @@
     }
 }
 
+@media (max-width: 820px){
 
+    .container h1 {
+        font-size: 7vw;
+    }
+    .projects__wrapper {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 1.5rem;
+    }
+    .pr1 {
+        margin-top: 55rem;
+    }
+ 
+   
+
+}
  
