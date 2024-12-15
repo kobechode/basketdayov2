@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { db, app } from "../../Firebaseconfig"; // Firebase config
-import { doc, setDoc } from "firebase/firestore";
+import { doc, setDoc,getDocs,collection  } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import emailjs from '@emailjs/browser';
  
@@ -13,6 +13,24 @@ const WsbcReg = () => {
   const [contactnum, setContactnum] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const [docCount, setDocCount] = useState(0);
+   const [isDisabled, setIsDisabled] = useState(false);
+
+    useEffect(() => {
+      const fetchDocumentCount = async () => {
+        const currentDate = new Date().toISOString().split("T")[0]; // Get today's date
+        const querySnapshot = await getDocs(
+          collection(db, "Basketdayo", "Wsbc", `${currentDate}_Registered_Players`)
+        );
+        const count = querySnapshot.size;
+        setDocCount(count);
+  
+        // Disable the button if document count exceeds 20
+        setIsDisabled(count >= 20);
+      };
+  
+      fetchDocumentCount();
+    }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent form refresh
@@ -69,6 +87,10 @@ const WsbcReg = () => {
             console.log('FAILED...', error.text);
           },
         );
+
+   
+
+
     };
 
   
@@ -81,6 +103,7 @@ const WsbcReg = () => {
         alt=""
       />
       {error && <p className="error-message text-red-500">{error}</p>}
+      <p className=" text-green-500">Registered Players Today: {docCount}/20</p>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="firstname">First name</label>
@@ -119,11 +142,11 @@ const WsbcReg = () => {
             id="contactnum"
             value={contactnum}
             onChange={(e) => setContactnum(e.target.value)}
-            required
+            
           />
         </div>
-        <button type="submit" className="signup-button_Wsbc">
-          Sign Up
+        <button type="submit" className="signup-button_Wsbc" disabled={isDisabled}>
+          {isDisabled ? "Registration Full" : "Sign Up"}
         </button>
       </form>
     </div>
