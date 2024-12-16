@@ -34,7 +34,7 @@ const PickupDashboard = () =>{
   <img class="w-[450px] h-[350px] "src="https://github.com/kobechode/CCT2/blob/master/WSBC2.png?raw=true" alt=""></img>
 <p>WSBC BALLERS</p>
  <div class="desc1">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+<p>This is a pickup basketball game that takes place on Monday, Tuesday, Wednesday, Friday, and Saturday from 6:00 PM to 9:00 PM at Glenwood Park Subdivision. Players of all skill levels are welcome to join and enjoy a friendly yet competitive basketball environment. Please note that registration is required, and slots are limited to ensure a fair and organized game. Make sure to arrive on time and bring the necessary gear to participate.</p>
  </div>
  
  <Link to="/wsbcreg">Join now</Link>
@@ -47,7 +47,7 @@ const PickupDashboard = () =>{
 <p>WCBA BALLERS</p>
 
 <div class="desc2">
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+  <p>This is a pickup basketball game that takes every Wednesday from 9:00 PM to 12:00 PM at Glenwood Park Subdivision. Players of all skill levels are welcome to join and enjoy a friendly yet competitive basketball environment. Please note that registration is required, and slots are limited to ensure a fair and organized game. Make sure to arrive on time and bring the necessary gear to participate.</p>
  
 
 </div>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { db } from "../../Firebaseconfig"; // Firebase config
 import { doc, setDoc, collection, getDocs } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 import "./wcba.css";
 
 const WcbaReg = () => {
@@ -12,7 +12,7 @@ const WcbaReg = () => {
   const [contactnum, setContactnum] = useState("");
   const [docCount, setDocCount] = useState(0);
   const [error, setError] = useState("");
-  const [isDisabled, setIsDisabled] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(true); // Default to disabled
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -24,11 +24,24 @@ const WcbaReg = () => {
       const count = querySnapshot.size;
       setDocCount(count);
 
-      // Disable the button if document count exceeds 20
-      setIsDisabled(count >= 30);
+      // Disable the button if document count exceeds 30
+      if (count >= 30) {
+        setIsDisabled(true);
+      }
+    };
+
+    const checkDayOfWeek = () => {
+      const today = new Date().getDay(); // 0 for Sunday, 1 for Monday, ..., 6 for Saturday
+      // Enable button only on Wednesday (3)
+      if (today === 3) {
+        setIsDisabled(false);
+      } else {
+        setIsDisabled(true);
+      }
     };
 
     fetchDocumentCount();
+    checkDayOfWeek();
   }, []);
 
   const handleSubmit = async (e) => {
@@ -77,9 +90,9 @@ const WcbaReg = () => {
 
       emailjs
         .send(
-          "service_615y0s3", 
-          "template_iotobqh", 
-          templateParams, 
+          "service_615y0s3",
+          "template_iotobqh",
+          templateParams,
           "VQdPf1Ssy_pj3-ern"
         )
         .then(
@@ -106,7 +119,7 @@ const WcbaReg = () => {
         alt=""
       ></img>
       {error && <p className="error-message text-red-500">{error}</p>}
-      <p className=" text-green-500">Registered Players Today: {docCount}/30</p>
+      <p className="text-green-500">Registered Players Today: {docCount}/30</p>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="firstname">First name</label>
@@ -151,7 +164,7 @@ const WcbaReg = () => {
           />
         </div>
         <button type="submit" className="signup-button_Wcba" disabled={isDisabled}>
-          {isDisabled ? "Registration Full" : "Sign Up"}
+          {isDisabled ? "Registration Unavailable" : "Sign Up"}
         </button>
       </form>
     </div>
