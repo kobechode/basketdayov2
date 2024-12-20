@@ -1,0 +1,92 @@
+/* Modern CSS for Terms and Conditions Inspired by YouTube Video Design */
+
+body {
+    background-color: #f4f7fc;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .terms-container {
+    max-width: 900px;
+    margin: 50px auto;
+    max-height: 700px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto;
+  }
+  
+  .terms-container:hover {
+    transform: translateY(-5px);
+  }
+  
+  .terms-container h1 {
+    font-size: 2.8rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  
+  .terms-container p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .terms-container a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .terms-container a:hover {
+    color: #2c3e50;
+    text-decoration: underline;
+  }
+  
+  .terms-section {
+    margin-bottom: 2.5rem;
+  }
+  
+  .terms-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+    color: #34495e;
+    border-left: 5px solid #3498db;
+    padding-left: 15px;
+  }
+  
+  .navigation-links {
+    text-align: center;
+    margin-top: 3rem;
+  }
+  
+  .navigation-links .btn {
+    display: inline-block;
+    font-size: 1.2rem;
+    color: #fff;
+    background: linear-gradient(135deg, #3498db, #8e44ad);
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  .navigation-links .btn:hover {
+    background: linear-gradient(135deg, #8e44ad, #3498db);
+    transform: translateY(-3px);
+  }
+  
+  .navigation-links .btn-primary {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  }
+  

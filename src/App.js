@@ -10,6 +10,7 @@ import WsbcReg from './Components/WSBC_REGFORM/Wsbc_Form';
 import WcbaReg from './Components/WCBA_REGFORM/Wcba_form';
 import TeachersReg from './Components/Teachers_Regform/Teachers_Regform';
 import AyalaReg from './Components/AyalaReg/AyalaReg';
+import TermsAndConditions from './Components/Terms And Condition Page/Terms';
 function App() {
   return (
     <div className="App">
@@ -24,6 +25,7 @@ function App() {
         <Route path="/teachersreg" element={<TeachersReg />} />
         <Route path="/ayalareg" element={<AyalaReg />} />
         <Route path="/wcbareg" element={<WcbaReg />} />
+        <Route path="/terms" element={<TermsAndConditions />} />
       </Routes>
     </Router>
     </div>

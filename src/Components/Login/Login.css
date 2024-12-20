@@ -99,12 +99,24 @@
     .login-links a:hover {
       color: #0056b3;
     }
+ 
+    input[type="checkbox"] {
+    margin-left: 9rem;
+    position: relative;
+    top: 25px; /* Moves the checkbox down */
+    }
 
     @media screen and (max-width: 768px) {
       .login-container {
         padding: 20px;
         width: 90%; /* Make it wider to fill the screen */
       }
+
+      input[type="checkbox"] {
+        margin-left: 7rem;
+        position: relative;
+        top: 25px; /* Moves the checkbox down */
+        }
     
       h2 {
         font-size: 1.5rem;
@@ -127,6 +139,12 @@
       .login-container {
         padding: 15px;
       }
+
+      input[type="checkbox"] {
+        margin-left: 7rem;
+        position: relative;
+        top: 25px; /* Moves the checkbox down */
+        }
     
       h2 {
         font-size: 1.2rem;

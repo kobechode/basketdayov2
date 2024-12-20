@@ -15,11 +15,20 @@ const WcbaReg = () => {
   const [isDisabled, setIsDisabled] = useState(true); // Default to disabled
   const navigate = useNavigate();
 
+  const getWednesdayOfTheWeek = (currentDate = new Date()) => {
+    const dayOfWeek = currentDate.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+    const diffToWednesday = 3 - dayOfWeek; // Calculate the difference to Wednesday (3)
+    const wednesday = new Date(currentDate);
+    wednesday.setDate(currentDate.getDate() + diffToWednesday);
+    return wednesday.toISOString().split("T")[0]; ;
+  };
+
   useEffect(() => {
     const fetchDocumentCount = async () => {
       const currentDate = new Date().toISOString().split("T")[0]; // Get today's date
+      const wednesdayDate = getWednesdayOfTheWeek(new Date());
       const querySnapshot = await getDocs(
-        collection(db, "Basketdayo", "Wcba", `${currentDate}_Registered_Players`)
+        collection(db, "Basketdayo", "Wcba", `${wednesdayDate}_Registered_Players`)
       );
       const count = querySnapshot.size;
       setDocCount(count);
@@ -33,7 +42,7 @@ const WcbaReg = () => {
     const checkDayOfWeek = () => {
       const today = new Date().getDay(); // 0 for Sunday, 1 for Monday, ..., 6 for Saturday
       // Enable button only on Wednesday (3)
-      if (today === 4) {
+      if (today === 1 || today === 2 || today ===5){
         setIsDisabled(false);
       } else {
         setIsDisabled(true);
@@ -49,6 +58,7 @@ const WcbaReg = () => {
 
     const currentDate = new Date();
     const formattedDate = currentDate.toISOString().split("T")[0];
+    const wednesdayDate = getWednesdayOfTheWeek(new Date());
     const options = {
       timeZone: "Asia/Manila",
       hour12: false,
@@ -64,7 +74,7 @@ const WcbaReg = () => {
       db,
       "Basketdayo",
       "Wcba",
-      `${formattedDate}_Registered_Players`,
+      `${wednesdayDate}_Registered_Players`,
       `${firstname}_${lastname}`
     );
 
@@ -76,6 +86,7 @@ const WcbaReg = () => {
           Lastname: lastname,
           Email: email,
           ContactNumber: contactnum,
+          wednesday_date: wednesdayDate,
         },
         { merge: true }
       );
