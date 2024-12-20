@@ -20,12 +20,17 @@ const WcbaReg = () => {
     const diffToWednesday = 3 - dayOfWeek; // Calculate the difference to Wednesday (3)
     const wednesday = new Date(currentDate);
     wednesday.setDate(currentDate.getDate() + diffToWednesday);
-    return wednesday.toISOString().split("T")[0];
+    return wednesday.toISOString().split("T")[0]; // Default ISO format for Firestore
+  };
+
+  const formatWednesdayForEmail = (wednesdayDate) => {
+    const date = new Date(wednesdayDate);
+    const options = { month: "short", day: "numeric", year: "numeric" };
+    return date.toLocaleDateString("en-US", options).replace(",", ""); // Format as "Dec 18 2024"
   };
 
   useEffect(() => {
     const fetchDocumentCount = async () => {
-      const currentDate = new Date().toISOString().split("T")[0]; // Get today's date
       const wednesdayDate = getWednesdayOfTheWeek(new Date());
       const querySnapshot = await getDocs(
         collection(db, "Basketdayo", "Wcba", `${wednesdayDate}_Registered_Players`)
@@ -56,19 +61,8 @@ const WcbaReg = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const currentDate = new Date();
-    const formattedDate = currentDate.toISOString().split("T")[0];
     const wednesdayDate = getWednesdayOfTheWeek(new Date());
-    const options = {
-      timeZone: "Asia/Manila",
-      hour12: false,
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-    };
-    const formattedTime = currentDate
-      .toLocaleString("en-US", options)
-      .replace(/:/g, "-");
+    const wednesdayFormattedForEmail = formatWednesdayForEmail(wednesdayDate);
 
     const docRef = doc(
       db,
@@ -86,7 +80,7 @@ const WcbaReg = () => {
           Lastname: lastname,
           Email: email,
           ContactNumber: contactnum,
-          wednesday_date: wednesdayDate,
+          wednesday_date: wednesdayDate, // Save ISO format in Firestore
         },
         { merge: true }
       );
@@ -97,7 +91,7 @@ const WcbaReg = () => {
         firstname: firstname,
         lastname: lastname,
         email: email,
-        wednesday_date: wednesdayDate, // Include Wednesday date in template params
+        wednesday_date: wednesdayFormattedForEmail, // Send formatted date to EmailJS
       };
 
       emailjs
@@ -166,7 +160,7 @@ const WcbaReg = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="Email">Contact Number</label>
+          <label htmlFor="Contactnum">Contact Number</label>
           <input
             type="tel"
             id="Contactnum"
