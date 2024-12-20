@@ -20,7 +20,7 @@ const WcbaReg = () => {
     const diffToWednesday = 3 - dayOfWeek; // Calculate the difference to Wednesday (3)
     const wednesday = new Date(currentDate);
     wednesday.setDate(currentDate.getDate() + diffToWednesday);
-    return wednesday.toISOString().split("T")[0]; ;
+    return wednesday.toISOString().split("T")[0];
   };
 
   useEffect(() => {
@@ -41,8 +41,8 @@ const WcbaReg = () => {
 
     const checkDayOfWeek = () => {
       const today = new Date().getDay(); // 0 for Sunday, 1 for Monday, ..., 6 for Saturday
-      // Enable button only on Wednesday (3)
-      if (today === 1 || today === 2 || today ===5){
+      // Enable button only on Monday, Tuesday, or Friday
+      if (today === 1 || today === 2 || today === 5) {
         setIsDisabled(false);
       } else {
         setIsDisabled(true);
@@ -97,6 +97,7 @@ const WcbaReg = () => {
         firstname: firstname,
         lastname: lastname,
         email: email,
+        wednesday_date: wednesdayDate, // Include Wednesday date in template params
       };
 
       emailjs
