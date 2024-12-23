@@ -103,7 +103,7 @@
     input[type="checkbox"] {
     margin-left: 9rem;
     position: relative;
-    top: 25px; /* Moves the checkbox down */
+    top: 55px; /* Moves the checkbox down */
     }
 
     @media screen and (max-width: 768px) {

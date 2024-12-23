@@ -114,7 +114,8 @@ const Login = () => {
             checked={termsAccepted}
             onChange={handleTermsChange}
           />
-          <label htmlFor="terms"> I accept the  <Link to="/Terms">Terms and condition</Link></label>
+          <label htmlFor="terms"> Review <Link to="/Terms">Terms and condition</Link></label>
+          <label htmlFor="terms"> I accept the   Terms and condition </label>
           {termsError && <p className="error-message text-red-500">{termsError}</p>}
         </div>
         <button type="submit" className="login-btn">Login</button>

@@ -1,106 +1,126 @@
-import './Pickup.css';
+import React, { useState } from "react";
+import "./Pickup.css";
+import { useNavigate, Link } from "react-router-dom";
 
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+const PickupDashboard = () => {
+  const navigate = useNavigate();
+ 
 
-const PickupDashboard = () =>{
+  const handleLogout = () => {
+    alert("You have been logged out successfully.");
+    navigate("/"); // Redirect to the login page
+  };
 
-   
+ 
   
-
-   
-  
-  
-  
-   
+  return (
+    <div className="PickupDashboard">
     
-  
-  
-  return(
 
-    
-      
-  
-  <div className="PickupDashboard">
+      {/* Main Content */}
+      <div className="container">
+          {/* Navbar */}
+     
+      <nav className="navbar">
+        <div className="navbar__container">
+          <Link to="/" className="navbar__logo">
+            Pickup Games
+          </Link>
+         
+          <ul className={`navbar__menu}`}>
+            <li className="navbar__item">
+             
+            </li>
+          </ul>
+          <button className="navbar__logout" onClick={handleLogout}>
+            Logout
+          </button>
+        </div>
+      </nav>
+        <div className="projects__wrapper">
+          {/* Project 1 */}
+          <div className="pr1">
+            <img
+              className="w-[450px] h-[350px]"
+              src="https://github.com/kobechode/CCT2/blob/master/WSBC2.png?raw=true"
+              alt="WSBC BALLERS"
+            />
+            <p>WSBC BALLERS</p>
+            <div className="desc1">
+              <p>
+                This is a pickup basketball game that takes place on Monday,
+                Tuesday, Wednesday, Friday, and Saturday from 6:00 PM to 9:00
+                PM at Glenwood Park Subdivision. Players of all skill levels are
+                welcome to join and enjoy a friendly yet competitive basketball
+                environment. Please note that registration is required, and
+                slots are limited to ensure a fair and organized game. Make sure
+                to arrive on time and bring the necessary gear to participate.
+              </p>
+            </div>
+            <Link to="/wsbcreg">Join now</Link>
+          </div>
 
- <div className="container">
+          {/* Project 2 */}
+          <div className="pr2">
+            <img
+              className="w-[450px] h-[350px]"
+              src="https://github.com/kobechode/CCT2/blob/master/WCBA.png?raw=true"
+              alt="WCBA BALLERS"
+            />
+            <p>WCBA BALLERS</p>
+            <div className="desc2">
+              <p>
+                This is a pickup basketball game that takes every Wednesday from
+                9:00 PM to 12:00 PM at Glenwood Park Subdivision. Players of all
+                skill levels are welcome to join and enjoy a friendly yet
+                competitive basketball environment. Please note that
+                registration is required, and slots are limited to ensure a fair
+                and organized game. Make sure to arrive on time and bring the
+                necessary gear to participate.
+              </p>
+            </div>
+            <Link to="/wcbareg">Join now</Link>
+          </div>
 
+          {/* Project 3 */}
+          <div className="pr3">
+            <img
+              className="w-[850px] h-[650px]"
+              src="https://github.com/kobechode/CCT2/blob/master/Teachers_Club.png?raw=true"
+              alt="Teachers Club"
+            />
+            <p>Teachers Club</p>
+            <div className="desc">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. sed
+                do eiusmod tempor incididunt ut labore et dolore magna.
+              </p>
+            </div>
+            <Link to="/teachersreg">Join now</Link>
+          </div>
 
+          {/* Project 4 */}
+          <div className="pr4">
+            <img
+              className="w-[550px] h-[450px]"
+              src="https://github.com/kobechode/CCT2/blob/master/Ayala.png?raw=true"
+              alt="Ayala Ballers"
+            />
+            <p>Ayala Ballers</p>
+            <div className="desc4">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. sed
+                do eiusmod tempor incididunt ut labore et dolore magna.
+              </p>
+            </div>
+            <Link to="/ayalareg">Join now</Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-<div class="projects__wrapper ">
-
-<div class="pr1 ">
-
-  <img class="w-[450px] h-[350px] "src="https://github.com/kobechode/CCT2/blob/master/WSBC2.png?raw=true" alt=""></img>
-<p>WSBC BALLERS</p>
- <div class="desc1">
-<p>This is a pickup basketball game that takes place on Monday, Tuesday, Wednesday, Friday, and Saturday from 6:00 PM to 9:00 PM at Glenwood Park Subdivision. Players of all skill levels are welcome to join and enjoy a friendly yet competitive basketball environment. Please note that registration is required, and slots are limited to ensure a fair and organized game. Make sure to arrive on time and bring the necessary gear to participate.</p>
- </div>
- 
- <Link to="/wsbcreg">Join now</Link>
-</div>
-
-
-<div class="pr2">
-
-  <img class="w-[450px] h-[350px] " src="https://github.com/kobechode/CCT2/blob/master/WCBA.png?raw=true" alt=""></img>
-<p>WCBA BALLERS</p>
-
-<div class="desc2">
-  <p>This is a pickup basketball game that takes every Wednesday from 9:00 PM to 12:00 PM at Glenwood Park Subdivision. Players of all skill levels are welcome to join and enjoy a friendly yet competitive basketball environment. Please note that registration is required, and slots are limited to ensure a fair and organized game. Make sure to arrive on time and bring the necessary gear to participate.</p>
- 
-
-</div>
-
-<Link to="/wcbareg">Join now</Link>
-</div>
-
-<div class="pr3">
-
-  <img class="w-[850px] h-[650px]"  src="https://github.com/kobechode/CCT2/blob/master/Teachers_Club.png?raw=true" alt=""></img>
-<p>Teachers Club</p>
-<div class="desc">
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-
-</div>
-<Link to="/teachersreg">Join now</Link>
-</div>
-
-
-<div class="pr4">
-
-  <img class="w-[550px] h-[450px]"  src="https://github.com/kobechode/CCT2/blob/master/Ayala.png?raw=true" alt=""></img>
-<p>Ayala Ballers</p>
-<div class="desc4">
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-
-</div>
-<Link to="/ayalareg">Join now</Link>
-</div>
-
-
-
- 
-
-
-
- 
-</div>
-
-
-</div>
-
-
-
-
-
-
-  </div>
-   
- 
-  
-  
-  )
-  }
-  
-  export default PickupDashboard
+export default PickupDashboard;
