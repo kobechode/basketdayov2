@@ -1,6 +1,6 @@
 import './Dashboard.css';
 import { useState } from "react";
-import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
+import { BsChevronCompactLeft, BsChevronCompactRight, BsList } from 'react-icons/bs'; // Added BsList for hamburger icon
 import { Link, useNavigate } from "react-router-dom";
 
 export default function DashboardJs() {
@@ -11,6 +11,7 @@ export default function DashboardJs() {
     ];
 
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isMenuOpen, setIsMenuOpen] = useState(false); // State for menu toggle
     const navigate = useNavigate();
 
     const prevSlide = () => {
@@ -31,18 +32,28 @@ export default function DashboardJs() {
         navigate("/login"); // Redirect to login page
     };
 
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen); // Toggle menu visibility
+    };
+
     return (
         <div className='Dashboard'>
-          
+            {/* Hamburger Icon (Menu Toggle) */}
+            <div className="hamburger-menu" onClick={toggleMenu}>
+                <BsList size={30} color="#fff" />
+            </div>
+
+            {/* Toggle Menu */}
+            {isMenuOpen && (
+                <div className="toggle-menu">
+                    <button className="logout-buttonDb" onClick={handleLogout}>
+                        Logout
+                    </button>
+                </div>
+            )}
 
             <div className="my-slider flex gap-12">
-
-                  {/* Logout Button */}
-            <div className="logout-container">
-                <button className="logout-buttonDb" onClick={handleLogout}>
-                    Logout
-                </button>
-            </div>
+                {/* Image cards */}
                 <div className="Img1">
                     <Link to="/PickupDash">
                         <img className="w-[350px] h-[250px]" src="https://github.com/kobechode/CCT2/blob/master/Basketball-court.jpg?raw=true" alt="" />

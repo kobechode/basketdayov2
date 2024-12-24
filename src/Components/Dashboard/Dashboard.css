@@ -125,7 +125,14 @@ font-style: oblique;
   background-color: #d32f2f;
 }
 
- 
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
  
  /* Media Queries for Responsiveness */
 
@@ -148,6 +155,11 @@ font-style: oblique;
     margin-top: 24rem;
  
   }  
+
+  .hamburger-menu {
+    display: block; /* Show the hamburger menu on smaller screens */
+  }
+
 
   .logout-buttonDb {
  
