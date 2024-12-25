@@ -115,7 +115,7 @@
       input[type="checkbox"] {
         margin-left: 7rem;
         position: relative;
-        top: 25px; /* Moves the checkbox down */
+        top: 55px; /* Moves the checkbox down */
         }
     
       h2 {
@@ -143,7 +143,38 @@
       input[type="checkbox"] {
         margin-left: 7rem;
         position: relative;
-        top: 25px; /* Moves the checkbox down */
+        top: 55px; /* Moves the checkbox down */
+        }
+    
+      h2 {
+        font-size: 1.2rem;
+      }
+    
+      input[type="text"],
+      input[type="password"] {
+        font-size: 0.8rem;
+        padding: 6px;
+      }
+    
+      .login-btn {
+        font-size: 0.8rem;
+        padding: 6px;
+      }
+    
+      .login-links a {
+        font-size: 0.9rem;
+      }
+    }
+
+     @media screen and (max-width: 480px) {
+      .login-container {
+        padding: 15px;
+      }
+
+      input[type="checkbox"] {
+        margin-left: 7rem;
+        position: relative;
+        top: 55px; /* Moves the checkbox down */
         }
     
       h2 {

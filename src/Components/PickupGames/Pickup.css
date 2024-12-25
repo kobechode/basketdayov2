@@ -330,7 +330,21 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      top: 48rem;
+      top: 50rem;
       position: relative;
   }
 }
+
+@media screen and (max-width: 375px) and (max-height: 1232px) {
+  .container button {
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      top: 49rem;
+      position: relative;
+  }
+}
+
+ 

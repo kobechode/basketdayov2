@@ -1,6 +1,6 @@
 import './Dashboard.css';
 import { useState } from "react";
-import { BsChevronCompactLeft, BsChevronCompactRight, BsList } from 'react-icons/bs'; // Added BsList for hamburger icon
+import { BsList } from 'react-icons/bs'; // Added BsList for hamburger icon
 import { Link, useNavigate } from "react-router-dom";
 
 export default function DashboardJs() {
@@ -27,7 +27,6 @@ export default function DashboardJs() {
     };
 
     const handleLogout = () => {
-        // Add your logout logic here
         console.log("User logged out");
         navigate("/login"); // Redirect to login page
     };
@@ -38,22 +37,27 @@ export default function DashboardJs() {
 
     return (
         <div className='Dashboard'>
-            {/* Hamburger Icon (Menu Toggle) */}
-            <div className="hamburger-menu" onClick={toggleMenu}>
-                <BsList size={30} color="#fff" />
-            </div>
+            {/* Navbar */}
+            <nav className="navbar">
+                {/* Hamburger Icon for Mobile - Only shown if menu is not open */}
+                {!isMenuOpen && (
+                    <div className="menu-icon" onClick={toggleMenu}>
+                        <BsList size={40} />
+                    </div>
+                )}
 
-            {/* Toggle Menu */}
-            {isMenuOpen && (
-                <div className="toggle-menu">
-                    <button className="logout-buttonDb" onClick={handleLogout}>
-                        Logout
-                    </button>
-                </div>
-            )}
+                {/* Menu Items - Logout Button only appears when isMenuOpen is true */}
+                <ul className={`menu-list ${isMenuOpen ? 'block' : 'hidden'} md:flex md:items-center`}>
+                    <li>
+                        <button className="logout-buttonDb" onClick={handleLogout}>
+                            Logout
+                        </button>
+                    </li>
+                </ul>
+            </nav>
 
+            {/* Slider */}
             <div className="my-slider flex gap-12">
-                {/* Image cards */}
                 <div className="Img1">
                     <Link to="/PickupDash">
                         <img className="w-[350px] h-[250px]" src="https://github.com/kobechode/CCT2/blob/master/Basketball-court.jpg?raw=true" alt="" />

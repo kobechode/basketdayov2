@@ -114,8 +114,9 @@ font-style: oblique;
   box-shadow: 0px 8px 13px rgba(138, 233, 60, 0.5);
   cursor: pointer;
   border-radius: 5px;
- top: -16rem;
- left:70rem;
+  top: -60rem;
+ 
+ 
   position: relative;
 
 }
@@ -125,15 +126,44 @@ font-style: oblique;
   background-color: #d32f2f;
 }
 
-.hamburger-menu {
-  display: none;
+.menu-icon{
+position: relative;
+top: -60rem;
+left: 68rem;
+
+} 
+ /* Style for the Navbar */
+ 
+/* For the Hamburger Icon */
+.menu-icon {
+  display: block;
   cursor: pointer;
-  position: absolute;
-  top: 20px;
-  right: 20px;
 }
 
+/* For the Menu Items */
+.menu-list {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+  list-style: none;
+}
+
+/* When the menu is open, display it */
+.menu-list.block {
+  display: block;
+  position: absolute;
+  top: -1rem;
+  right: 0;
  
+  padding: 1rem;
+  width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Hide menu when not open */
+.menu-list.hidden {
+  display: none;
+}
  /* Media Queries for Responsiveness */
 
 /* For Tablets and Medium Devices */
@@ -155,11 +185,23 @@ font-style: oblique;
     margin-top: 24rem;
  
   }  
-
-  .hamburger-menu {
-    display: block; /* Show the hamburger menu on smaller screens */
+  .menu-icon {
+    display: block;
+    cursor: pointer;
   }
 
+  .menu-list {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu-list li {
+    margin-left: 2rem;
+}
+
+/* Hide the hamburger menu on larger screens */
+ 
+ 
 
   .logout-buttonDb {
  
@@ -179,7 +221,8 @@ font-style: oblique;
 }
  
  
-   
+
+
 }
 
 /* For Mobile Phones and Smaller Devices */
@@ -201,9 +244,11 @@ font-style: oblique;
     margin-top: 32rem;
  
   }  
-
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
   
-
  
 .logout-button:hover {
     background-color: #d32f2f;
