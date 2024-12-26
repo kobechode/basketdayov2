@@ -354,7 +354,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      top: 49rem;
+      top: 51rem;
       position: relative;
+      left: 4rem;
+      
   }
 }
