@@ -590,4 +590,16 @@ left: 68rem;
     } 
 }
 
+@media screen and (max-width: 1080px) and (max-height: 2340px) {
  
+  .logout-buttonDb {
+    position: relative;
+    margin: 1rem auto;
+    display: block;
+    text-align: center;
+    top: -8rem;
+    left: -8rem;
+     
+     
+  }
+}

@@ -459,7 +459,7 @@
     transition: background-color 0.3s;
     z-index: 1000; /* Ensure logout button appears on top */
     position: relative; /* Ensures it can be clicked */
-  margin-top: 10rem;
+  margin-top: 8rem;
   }
 }
 
