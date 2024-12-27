@@ -156,6 +156,7 @@
   transition: background-color 0.3s;
   z-index: 1000; /* Ensure logout button appears on top */
   position: relative; /* Ensures it can be clicked */
+  left: -15rem;
 }
 
 /* Hamburger menu toggle button */
@@ -186,6 +187,19 @@
   }
   .pr1 {
       margin-top: 55rem;
+  }
+  .navbar__logout {
+    color: #58ff7d;
+    border: 1px solid #62BA1B;
+    box-shadow: 0px 8px 13px rgba(138, 233, 60, 0.5);
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1000; /* Ensure logout button appears on top */
+    position: relative; /* Ensures it can be clicked */
+    left: -15rem;
   }
 
   /* Toggle button for smaller screens */
@@ -250,6 +264,20 @@
       top: 50rem;
       position: relative;
   }
+
+  .navbar__logout {
+    color: #58ff7d;
+    border: 1px solid #62BA1B;
+    box-shadow: 0px 8px 13px rgba(138, 233, 60, 0.5);
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1000; /* Ensure logout button appears on top */
+    position: relative; /* Ensures it can be clicked */
+    left: -15rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -284,6 +312,39 @@
   .navbar__menu--open {
       display: flex;
   }
+  .navbar__logout {
+    color: #58ff7d;
+    border: 1px solid #62BA1B;
+    box-shadow: 0px 8px 13px rgba(138, 233, 60, 0.5);
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1000; /* Ensure logout button appears on top */
+    position: relative; /* Ensures it can be clicked */
+    left: -20rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  
+  .navbar__logout {
+    color: #58ff7d;
+    border: 1px solid #62BA1B;
+    box-shadow: 0px 8px 13px rgba(138, 233, 60, 0.5);
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1000; /* Ensure logout button appears on top */
+    position: relative; /* Ensures it can be clicked */
+    left: -15rem;
+    margin-left: -10rem;
+    margin-top: -6rem;
+  }
+
 }
 
 @media (max-width: 820px) {
@@ -297,6 +358,19 @@
   .pr1 {
       margin-top: 55rem;
   }
+  .navbar__logout {
+    color: #58ff7d;
+    border: 1px solid #62BA1B;
+    box-shadow: 0px 8px 13px rgba(138, 233, 60, 0.5);
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1000; /* Ensure logout button appears on top */
+    position: relative; /* Ensures it can be clicked */
+    left: -15rem;
+  }
 }
 
 @media screen and (max-width: 370px) and (max-height: 830px) {
@@ -308,6 +382,20 @@
       align-items: center;
       top: 44rem;
       position: relative;
+  }
+
+  .navbar__logout {
+    color: #58ff7d;
+    border: 1px solid #62BA1B;
+    box-shadow: 0px 8px 13px rgba(138, 233, 60, 0.5);
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1000; /* Ensure logout button appears on top */
+    position: relative; /* Ensures it can be clicked */
+    left: -20rem;
   }
 }
 
@@ -360,3 +448,6 @@
       
   }
 }
+
+ 
+ 
