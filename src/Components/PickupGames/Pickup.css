@@ -463,5 +463,35 @@
   }
 }
 
+@media screen and (max-width: 820px)   {
+  .container button {
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      top: 49rem;
+      position: relative;
+      left: 2rem;
+      
+  }
+
+  .navbar__logout {
+    color: #58ff7d;
+    border: 1px solid #62BA1B;
+    box-shadow: 0px 8px 13px rgba(138, 233, 60, 0.5);
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1000; /* Ensure logout button appears on top */
+    position: relative; /* Ensures it can be clicked */
+  margin-top: 8rem;
+  left: -4rem;
+  }
+}
+
+
  
  
