@@ -25,7 +25,7 @@ export default function DashboardJs() {
 
     const handleLogout = () => {
         console.log("User logged out");
-        navigate("/login");
+        navigate("/");
     };
 
     const toggleMenu = () => {

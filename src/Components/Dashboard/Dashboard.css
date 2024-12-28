@@ -243,7 +243,8 @@ left: 68rem;
     padding: 11rem;
     flex-wrap: wrap;
     gap: 4rem;
-    margin-top: 32rem;
+    top: 3rem;
+    position: relative;
  
   }  
   .menu-icon {
@@ -253,7 +254,7 @@ left: 68rem;
   
   .logout-buttonDb {
  
-    top: -20rem; /* Reset top offset */
+    top: 3rem; /* Reset top offset */
     left: -8rem; /* Reset left offset */
     margin: 1rem auto; /* Center the button */
     display: block; /* Ensure visibility */
@@ -597,9 +598,26 @@ left: 68rem;
     margin: 1rem auto;
     display: block;
     text-align: center;
-    top: -14rem;
+    top: -17rem;
     
-     
-     
   }
 }
+
+@media screen and (max-width: 415px)   {
+ 
+  .logout-buttonDb {
+    position: relative;
+    margin: 1rem auto;
+    display: block;
+    text-align: center;
+    margin-top: 3rem;
+   
+    z-index: 10; /* Ensure it's on top */
+
+
+}
+
+}
+
+
+ 
