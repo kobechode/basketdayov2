@@ -619,5 +619,40 @@ left: 68rem;
 
 }
 
-
+@media screen and (min-height: 1232px)   {
  
+  .logout-buttonDb {
+    position: relative;
+    margin: 1rem auto;
+    display: block;
+    text-align: center;
+    margin-top: 3rem;
+    top: -40rem;
+    z-index: 10; /* Ensure it's on top */
+    left: 14rem;
+}
+
+.my-slider{
+  display: block;
+  margin-top: 23rem;
+  gap: 4rem;
+}
+
+.Img2{
+
+  margin-top: 5rem;
+}
+
+.Img3{
+
+  margin-top: 5rem;
+}
+
+
+.menu-icon{
+  position: relative;
+  top: -35rem;
+  left: -10rem;
+  
+  } 
+}

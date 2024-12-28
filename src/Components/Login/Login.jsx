@@ -120,8 +120,8 @@ const Login = () => {
         </div>
         <button type="submit" className="login-btn">Login</button>
         <div className="login-links">
-          <a href="#">Forgot Password?</a>
-          <br />
+        
+         
           <Link to="/signup">Create an Account</Link>
         </div>
       </form>
