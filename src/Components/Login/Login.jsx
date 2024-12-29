@@ -84,7 +84,7 @@ const Login = () => {
       {error && <p className="error-message text-red-500">{error}</p>}
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="username">Username</label>
+          <label htmlFor="username">Email</label>
           <input
             type="text"
             id="username"
