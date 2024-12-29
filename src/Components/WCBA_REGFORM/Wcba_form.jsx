@@ -105,7 +105,7 @@ const WcbaReg = () => {
           () => {
             console.log("SUCCESS!");
             alert("Registration and email confirmation successful!");
-            navigate("/success");
+            navigate("/dashboard");
           },
           (error) => {
             console.log("FAILED...", error.text);
