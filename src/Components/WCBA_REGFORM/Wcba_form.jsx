@@ -47,7 +47,7 @@ const WcbaReg = () => {
     const checkDayOfWeek = () => {
       const today = new Date().getDay(); // 0 for Sunday, 1 for Monday, ..., 6 for Saturday
       // Enable button only on Monday, Tuesday, or Friday
-      if (today === 1 || today === 2 || today === 3) {
+      if (today === 0 || today === 1 || today === 2 || today === 3) {
         setIsDisabled(false);
       } else {
         setIsDisabled(true);
