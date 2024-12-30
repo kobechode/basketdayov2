@@ -11,6 +11,12 @@ import WcbaReg from './Components/WCBA_REGFORM/Wcba_form';
 import TeachersReg from './Components/Teachers_Regform/Teachers_Regform';
 import AyalaReg from './Components/AyalaReg/AyalaReg';
 import TermsAndConditions from './Components/Terms And Condition Page/Terms';
+import TrainDash from './Components/TrainingDashboard/TrainDash';
+import BucalCamp from './Components/BucalCamp/BucalCamp';
+import LeagueDashboard from './Components/League_Dashboard/LeagueDash';
+import WcbaLeague from './Components/Wcba_League/WcbaLeague';
+import RegisteredPlayersWcba from './Components/Wcba_League/RegisteredPlayers';
+
 function App() {
   return (
     <div className="App">
@@ -26,6 +32,11 @@ function App() {
         <Route path="/ayalareg" element={<AyalaReg />} />
         <Route path="/wcbareg" element={<WcbaReg />} />
         <Route path="/terms" element={<TermsAndConditions />} />
+        <Route path="/traindash" element={<TrainDash />} />
+        <Route path="/bucalcamp" element={<BucalCamp />} />
+        <Route path="/leaguedash" element={<LeagueDashboard />} />
+        <Route path="/wcbaleague" element={<WcbaLeague />} />
+        <Route path="/registeredplayersleaguewcba" element={<RegisteredPlayersWcba />} />
       </Routes>
     </Router>
     </div>

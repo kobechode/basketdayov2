@@ -1,0 +1,304 @@
+.Game_Analytics {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-left:28rem;
+  }
+  
+ 
+  
+  .headerGame {
+    padding: 3rem 0;
+   
+   margin-top: -2rem;
+   
+  }
+  .headerGame .nav ul {
+    display: flex;
+    gap: 2rem;
+    color: #58ff7d;
+    margin-left: -55rem;
+    margin-top: -1rem;
+  }
+  .headerGame .nav ul a {
+    color: #9c9c9c;
+    
+    
+  }
+  .headerGame .nav ul a:hover {
+    color: #58ff7d;
+  }
+  .headerGame .nav ul a.active {
+    color: #58ff7d;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  table {
+    width: 350%;
+    max-width: 1000px;
+    border-collapse: collapse;
+    background: #3b444b;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #58ff7d;
+    border-radius: 3px;
+    margin-left: -23rem;
+   
+  }
+  
+  thead {
+    background-color: #080808;
+    color: #58ff7d;
+    text-transform: uppercase;
+  }
+  
+  th, td {
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+  }
+  
+  tbody tr {
+    border-bottom: 1px solid #58ff7d;
+    transition: background-color 0.3s ease;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #373737;
+  }
+  
+  tbody tr:hover {
+    /* background-color: #58ff7d; */
+  }
+  
+  tbody td {
+    color: #fff;
+  }
+  
+  tbody td.actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  button {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 12px;
+  }
+  
+  button.edit {
+    background-color: #3498db;
+  }
+  
+  button.edit:hover {
+    background-color: #2980b9;
+  }
+  
+  button.delete {
+    background-color: #e74c3c;
+  }
+  
+  button.delete:hover {
+    background-color: #c0392b;
+  }
+  
+  caption {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    color: #58ff7d;
+  }
+  
+  .schedule {
+    max-width: 1900px;
+    margin: 20px auto;
+    padding: 20px;
+  
+    border-radius: 10px;
+    margin-left: 15rem;
+    margin-top: 10rem;
+  }
+  .schedule>h1{
+  
+    color: #58ff7d;
+    margin-left: -29rem;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    
+  }
+  
+  .day {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 8px;
+    width: 700px;
+    margin-left: -30rem;
+  }
+  
+  .day h3 {
+    margin: 0 0 5px;
+    font-size: 18px;
+    color: #FFD700;
+    margin-left: -36rem;
+  }
+  
+  .day p {
+    margin: 0 0 10px;
+    font-size: 14px;
+    color: #ccc;
+    margin-left: -28rem;
+  }
+  
+  .game {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .time {
+    flex: 0 0 100px;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .matchup {
+    flex: 1;
+    font-size: 16px;
+  }
+  
+  .team {
+    font-weight: bold;
+    color: #FFD700;
+  }
+  
+  
+  
+   /* Responsive Adjustments */
+  @media (max-width: 1200px) {
+    .Game_Analytics {
+      margin-left: auto;
+      padding: 20px;
+    }
+  
+    table {
+      width: 100%;
+      margin-left: 0;
+      padding: 1rem;
+    }
+  
+    .headerGame {
+      margin-left: 0;
+      margin-top: 0;
+      text-align: center;
+    }
+  
+    .headerGame .nav ul {
+      flex-direction: column;
+      gap: 1rem;
+      margin-left: 0;
+      margin-top: 0;
+    }
+  
+    .schedule {
+      max-width: 100%;
+      margin-left: 0;
+      margin-top: 2rem;
+    }
+  
+    .schedule > h1 {
+      margin-left: 0;
+      text-align: center;
+      font-size: 1.8rem;
+    }
+  
+    .day {
+      width: auto;
+      margin-left: 0;
+    }
+  
+    .day h3,
+    .day p {
+      margin-left: 0;
+      text-align: left;
+    }
+  
+    .game {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .time {
+      text-align: left;
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .Game_Analytics {
+      padding: 10px;
+    }
+  
+    table {
+      font-size: 12px;
+    }
+  
+    th,
+    td {
+      padding: 10px;
+    }
+  
+    .headerGame .nav ul {
+      gap: 0.5rem;
+    }
+  
+    .schedule > h1 {
+      font-size: 1.5rem;
+    }
+  
+    .day h3 {
+      font-size: 16px;
+    }
+  
+    .matchup {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    table {
+      font-size: 10px;
+      padding: 0.5rem;
+    }
+  
+    .headerGame .nav ul {
+      gap: 0.3rem;
+    }
+  
+    .schedule > h1 {
+      font-size: 1.2rem;
+    }
+  
+    .day h3 {
+      font-size: 14px;
+    }
+  }
+  
+   

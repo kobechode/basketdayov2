@@ -57,16 +57,20 @@ export default function DashboardJs() {
                     </Link>
                 </div>
                 <div className='Img2'>
+                <Link to="/traindash">
                     <img className="w-[350px] h-[250px]" src={slides[1].url} alt="Coaching Session" />
                     <div className='card-content'>
                         <h1>Coaching Session</h1>
                     </div>
+                    </Link>
                 </div>
                 <div className='Img3'>
+                <Link to="/leaguedash">
                     <img className="w-[350px] h-[250px]" src={slides[2].url} alt="Venue Reservation" />
                     <div className='card-content'>
-                        <h1>Venue Reservation</h1>
+                        <h1>League Registration</h1>
                     </div>
+                    </Link>
                 </div>
             </div>
         </div>
