@@ -39,7 +39,7 @@
   
   .nav__link:hover,
   .nav__link.active {
-    color: #f9a826;
+    color: #58ff7d;
   }
 
 
@@ -106,7 +106,7 @@
   display: flex;
   gap: 2rem;
   color: #58ff7d;
-  margin-left: -58rem;
+  margin-left: -54rem;
   margin-top: -1rem;
 }
 .headerHome .nav ul a {

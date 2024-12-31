@@ -131,10 +131,10 @@ const WcbaLeague = () => {
             <nav className="nav">
               <ul className="nav__list">
                 <li className="nav__item">
-                  <Link to="/Home" className="nav__link active">Home</Link>
+                  <Link to="/wcbaleague" className="nav__link active">Registration</Link>
                 </li>
                 <li className="nav__item">
-                  <Link to="/registeredplayersleaguewcba" className="nav__link">Game Analytics</Link>
+                  <Link to="/registeredplayersleaguewcba" className="nav__link">Registered Players</Link>
                 </li>
               
               </ul>

@@ -66,8 +66,8 @@ const RegisteredPlayersWcba = () => {
           <div className="header__wrapper">
             <nav className="nav">
               <ul>
-                <Link to="/Home">Home</Link>
-                <Link to="/game" className="active">Game Analytics</Link>
+                <Link to="/wcbaleague">Registration</Link>
+                <Link to="/game" className="active">Registered Players</Link>
               </ul>
             </nav>
           </div>
@@ -116,6 +116,226 @@ const RegisteredPlayersWcba = () => {
           Next
         </button>
       </div>
+
+      <div class="schedule">
+      
+
+      <h1>Game Schedule</h1>
+      <div class="day">
+          <h3>Sat Dec 07</h3>
+          <p>Location: Montana Basketball Court</p>
+          <div class="game">
+              <div class="time">05:00 PM</div>
+              <div class="matchup">
+                  <span class="team">Magnolia Hotshots</span> vs 
+                  <span class="team">Converge FiberXers</span>
+              </div>
+          </div>
+          <div class="game">
+              <div class="time">07:30 PM</div>
+              <div class="matchup">
+                  <span class="team">Meralco Bolts</span> vs 
+                  <span class="team">Rain or Shine</span>
+              </div>
+          </div>
+          <div class="game">
+              <div class="time">09:30 PM</div>
+              <div class="matchup">
+                  <span class="team">NorthPort Batang Pier</span> vs 
+                  <span class="team">San Miguel Beermen</span>
+              </div>
+          </div>
+      </div>
+     
+      <div class="day">
+          <h3>Sun Dec 08</h3>
+          <p>Location: Montana Basketball Court</p>
+          <div class="game">
+              <div class="time">05:00 PM</div>
+              <div class="matchup">
+                  <span class="team">Team Pink</span> vs 
+                  <span class="team">Team Black</span>
+              </div>
+          </div>
+          <div class="game">
+              <div class="time">07:30 PM</div>
+              <div class="matchup">
+                  <span class="team">San Miguel Beermen</span> vs 
+                  <span class="team">Phoenix Fuel Masters</span>
+              </div>
+          </div>
+          <div class="game">
+              <div class="time">09:30 PM</div>
+              <div class="matchup">
+                  <span class="team">Magnolia Hotshots</span> vs 
+                  <span class="team">Eastern Long Lions</span>
+              </div>
+          </div>
+      </div>
+     
+      <div class="day">
+          <h3>Sat Dec 14</h3>
+          <p>Location: Montana Basketball Court</p>
+          <div class="game">
+              <div class="time">05:00 PM</div>
+              <div class="matchup">
+                  <span class="team">NorthPort Batang Pier</span> vs 
+                  <span class="team">Magnolia Hotshots</span>
+              </div>
+          </div>
+          <div class="game">
+              <div class="time">07:30 PM</div>
+              <div class="matchup">
+                  <span class="team">Rain or Shine</span> vs 
+                  <span class="team">Eastern Long Lions</span>
+              </div>
+          </div>
+          <div class="game">
+              <div class="time">09:30 PM</div>
+              <div class="matchup">
+                  <span class="team">Terrafirma Dyip</span> vs 
+                  <span class="team">Converge FiberXers</span>
+              </div>
+          </div>
+      </div>
+
+       
+        <div class="day">
+          <h3>Sun Dec 15</h3>
+          <p>Location: Montana Basketball Court</p>
+          <div class="game">
+              <div class="time">05:00 PM</div>
+              <div class="matchup">
+                  <span class="team">NorthPort Batang Pier</span> vs 
+                  <span class="team">Magnolia Hotshots</span>
+              </div>
+          </div>
+          <div class="game">
+              <div class="time">07:30 PM</div>
+              <div class="matchup">
+                  <span class="team">Rain or Shine</span> vs 
+                  <span class="team">Eastern Long Lions</span>
+              </div>
+          </div>
+          <div class="game">
+              <div class="time">09:30 PM</div>
+              <div class="matchup">
+                  <span class="team">Terrafirma Dyip</span> vs 
+                  <span class="team">Converge FiberXers</span>
+              </div>
+          </div>
+      </div>
+
+       
+        <div class="day">
+          <h3>Sat Dec 21</h3>
+          <p>Location: Montana Basketball Court</p>
+          <div class="game">
+              <div class="time">05:00 PM</div>
+              <div class="matchup">
+                  <span class="team">NorthPort Batang Pier</span> vs 
+                  <span class="team">Magnolia Hotshots</span>
+              </div>
+          </div>
+          <div class="game">
+              <div class="time">07:30 PM</div>
+              <div class="matchup">
+                  <span class="team">Rain or Shine</span> vs 
+                  <span class="team">Eastern Long Lions</span>
+              </div>
+          </div>
+          <div class="game">
+              <div class="time">09:30 PM</div>
+              <div class="matchup">
+                  <span class="team">Terrafirma Dyip</span> vs 
+                  <span class="team">Converge FiberXers</span>
+              </div>
+          </div>
+      </div>
+
+         
+         <div class="day">
+          <h3>Sun Dec 22</h3>
+          <p>Location: Montana Basketball Court</p>
+          <div class="game">
+              <div class="time">05:00 PM</div>
+              <div class="matchup">
+                  <span class="team">NorthPort Batang Pier</span> vs 
+                  <span class="team">Magnolia Hotshots</span>
+              </div>
+          </div>
+          <div class="game">
+              <div class="time">07:30 PM</div>
+              <div class="matchup">
+                  <span class="team">Rain or Shine</span> vs 
+                  <span class="team">Eastern Long Lions</span>
+              </div>
+          </div>
+          <div class="game">
+              <div class="time">09:30 PM</div>
+              <div class="matchup">
+                  <span class="team">Terrafirma Dyip</span> vs 
+                  <span class="team">Converge FiberXers</span>
+              </div>
+          </div>
+      </div>
+
+        
+         <div class="day">
+          <h3>Sat Dec 28</h3>
+          <p>Location: Montana Basketball Court</p>
+          <div class="game">
+              <div class="time">05:00 PM</div>
+              <div class="matchup">
+                  <span class="team">NorthPort Batang Pier</span> vs 
+                  <span class="team">Magnolia Hotshots</span>
+              </div>
+          </div>
+          <div class="game">
+              <div class="time">07:30 PM</div>
+              <div class="matchup">
+                  <span class="team">Rain or Shine</span> vs 
+                  <span class="team">Eastern Long Lions</span>
+              </div>
+          </div>
+          <div class="game">
+              <div class="time">09:30 PM</div>
+              <div class="matchup">
+                  <span class="team">Terrafirma Dyip</span> vs 
+                  <span class="team">Converge FiberXers</span>
+              </div>
+          </div>
+      </div>
+
+        
+         <div class="day">
+          <h3>Sun Dec 29</h3>
+          <p>Location: Montana Basketball Court</p>
+          <div class="game">
+              <div class="time">05:00 PM</div>
+              <div class="matchup">
+                  <span class="team">NorthPort Batang Pier</span> vs 
+                  <span class="team">Magnolia Hotshots</span>
+              </div>
+          </div>
+          <div class="game">
+              <div class="time">07:30 PM</div>
+              <div class="matchup">
+                  <span class="team">Rain or Shine</span> vs 
+                  <span class="team">Eastern Long Lions</span>
+              </div>
+          </div>
+          <div class="game">
+              <div class="time">09:30 PM</div>
+              <div class="matchup">
+                  <span class="team">Terrafirma Dyip</span> vs 
+                  <span class="team">Converge FiberXers</span>
+              </div>
+          </div>
+      </div>
+         </div>
+
+      
     </div>
   );
 };
