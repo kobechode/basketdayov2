@@ -10,13 +10,23 @@ const RegisteredPlayersWcba = () => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1); // Current page
   const [itemsPerPage, setItemsPerPage] = useState(3); // Items per page (3 items per page)
-  
+  const [searchQuery, setSearchQuery] = useState(""); // Search query
+
   // Handle data slicing for pagination
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
 
-  const totalPages = Math.ceil(data.length / itemsPerPage); // Total pages calculation
+  // Filter the data based on the search query
+  const filteredData = data.filter((item) => {
+    return (
+      (item.Firstname && item.Firstname.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      (item.Lastname && item.Lastname.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      (item.Status && item.Status.toLowerCase().includes(searchQuery.toLowerCase()))
+    );
+  });
+
+  const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(filteredData.length / itemsPerPage); // Total pages calculation
 
   useEffect(() => {
     const fetchData = async () => {
@@ -64,8 +74,18 @@ const RegisteredPlayersWcba = () => {
         </div>
       </header>
 
+      {/* Search Bar */}
+      <div className="search-bar">
+        <input
+          type="text"
+          placeholder="Search..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+      </div>
+
       <table>
-        <caption>Team Rankings and Statistics</caption>
+        <caption>Registered Players</caption>
         <thead>
           <tr>
             <th>Firstname</th>
@@ -95,11 +115,6 @@ const RegisteredPlayersWcba = () => {
         <button onClick={nextPage} disabled={currentPage === totalPages} className="next-button">
           Next
         </button>
-      </div>
-
-      <div className="schedule">
-        <h1>Game Schedule</h1>
-        {/* Your game schedule content goes here */}
       </div>
     </div>
   );

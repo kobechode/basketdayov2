@@ -14,9 +14,30 @@
     padding: 3rem 0;
    
    margin-top: -2rem;
+ 
    
   }
-
+  .search-bar {
+    margin-bottom: 20px;
+    text-align: center;
+     position: relative;
+     left: 16rem;
+     top: 3rem;
+  }
+  
+  .search-bar input {
+    padding: 8px;
+    width: 150px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  .search-bar input:focus {
+    border-color: #007BFF;
+  }
+  
 
   .pagination {
     display: flex;
@@ -298,6 +319,24 @@
       font-size: 12px;
     }
   
+
+    .search-bar {
+      margin-bottom: 20px;
+      text-align: center;
+       position: relative;
+       left: 11rem;
+       top: 3rem;
+    }
+    
+    .search-bar input {
+      padding: 8px;
+      width: 100px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      outline: none;
+    }
+    
     th,
     td {
       padding: 10px;
@@ -324,7 +363,10 @@
     table {
       font-size: 10px;
       padding: 0.5rem;
+     
     }
+
+ 
   
     .headerGame .nav ul {
       gap: 0.3rem;
@@ -332,6 +374,23 @@
   
     .schedule > h1 {
       font-size: 1.2rem;
+    }
+
+    .search-bar {
+      margin-bottom: 20px;
+      text-align: center;
+       position: relative;
+       left: 8rem;
+       top: -1rem;
+    }
+    
+    .search-bar input {
+      padding: 8px;
+      width: 100px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      outline: none;
     }
   
     .day h3 {
