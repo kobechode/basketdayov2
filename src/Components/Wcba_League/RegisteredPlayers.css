@@ -16,6 +16,44 @@
    margin-top: -2rem;
    
   }
+
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .prev-button, .next-button {
+    padding: 5px 15px;
+    background-color: #da1616;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+  }
+  
+  .prev-button:disabled, .next-button:disabled {
+    background-color: #d41616;
+    cursor: not-allowed;
+  }
+  
+  .prev-button:hover, .next-button:hover {
+    background-color: #ddd;
+  }
+  
+  .page-link {
+    margin: 0 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .page-link:hover {
+    background-color: #ddd;
+  }
   .headerGame .nav ul {
     display: flex;
     gap: 2rem;
@@ -137,7 +175,7 @@
   .schedule>h1{
   
     color: #58ff7d;
-    margin-left: -29rem;
+    margin-left: -17rem;
     font-size: 2rem;
     margin-bottom: 2rem;
     

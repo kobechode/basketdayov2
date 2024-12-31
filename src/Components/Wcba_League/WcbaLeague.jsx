@@ -95,29 +95,29 @@ const WcbaLeague = () => {
         { merge: true }
       );
 
-      const templateParams = {
-        firstname: firstname,
-        lastname: lastname,
-        email: email,
+      // const templateParams = {
+      //   firstname: firstname,
+      //   lastname: lastname,
+      //   email: email,
      
-      };
+      // };
 
-      emailjs
-        .send(
-          "service_615y0s3",
-          "template_iotobqh",
-          templateParams,
-          "VQdPf1Ssy_pj3-ern"
-        )
-        .then(
-          () => {
-            alert("Registration and email confirmation successful!");
-            navigate("/dashboard");
-          },
-          (error) => {
-            setError("Email confirmation failed: " + error.text);
-          }
-        );
+      // emailjs
+      //   .send(
+      //     "service_615y0s3",
+      //     "template_iotobqh",
+      //     templateParams,
+      //     "VQdPf1Ssy_pj3-ern"
+      //   )
+      //   .then(
+      //     () => {
+      //       alert("Registration and email confirmation successful!");
+      //       navigate("/dashboard");
+      //     },
+      //     (error) => {
+      //       setError("Email confirmation failed: " + error.text);
+      //     }
+      //   );
     } catch (error) {
       setError("Error writing document: " + error.message);
     }
