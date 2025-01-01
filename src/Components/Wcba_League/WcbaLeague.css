@@ -4,8 +4,8 @@
     padding: 10px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: relative;
-    top: -13rem;
-    left: -60rem;
+    top: -6rem;
+    left: -47rem;
   }
   
   .header__wrapper {
@@ -106,13 +106,14 @@
   display: flex;
   gap: 2rem;
   color: #58ff7d;
-  margin-left: -54rem;
+  margin-left: -56rem;
   margin-top: -1rem;
 }
 .headerHome .nav ul a {
   color: #9c9c9c;
   margin-left: 29rem;
   margin-right: -30rem;
+  
   
 }
 .headerHome .nav ul a:hover {
@@ -125,7 +126,7 @@
 .headerHome {
     padding: 3rem 0;
    margin-left: 24rem;
-   margin-top: -2rem;
+   margin-top: 2rem;
    
   }
 
