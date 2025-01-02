@@ -1,12 +1,11 @@
-import './WcbaLeague.css';
-import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import { db } from "../../Firebaseconfig"; // Firebase config
-import { doc, setDoc, collection, getDocs,getFirestore } from "firebase/firestore";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { db } from "../../../Firebaseconfig";
+import { doc, setDoc, collection, getDocs, getFirestore } from "firebase/firestore";
 import emailjs from "@emailjs/browser";
-const firestore = getFirestore();
+import "./WcbaLeague.css";
 
+const firestore = getFirestore();
 
 const WcbaLeague = () => {
   const [email, setEmail] = useState("");
@@ -15,37 +14,14 @@ const WcbaLeague = () => {
   const [contactnum, setContactnum] = useState("");
   const [docCount, setDocCount] = useState(0);
   const [error, setError] = useState("");
-  const [Status,SetStatus] = useState("");
   const [isDisabled, setIsDisabled] = useState(true);
   const navigate = useNavigate();
 
- 
-  async function getItemNumber(collectionName, itemId) {
-    const colRef = collection(firestore, collectionName);
-    const querySnapshot = await getDocs(
-      collection(db, "League_Registration", "Wcba", `Wcba_Registered_Players`)
-    );
-    let index = 0;
-
-    // Iterate through documents
-    for (const doc of querySnapshot.docs) {
-        if (doc.id === itemId) {
-            return index; // Found the item
-        }
-        index++;
-    }
-
-    return -1; // Item not found
-}
-  
-
   useEffect(() => {
     const fetchDocumentCount = async () => {
-     
       const querySnapshot = await getDocs(
         collection(db, "League_Registration", "Wcba", `Wcba_Registered_Players`)
       );
-
 
       const count = querySnapshot.size;
       setDocCount(count);
@@ -55,23 +31,23 @@ const WcbaLeague = () => {
       }
     };
 
-    const checkDayOfWeek = () => {
-      const today = new Date().getDay();
-      if (today === 0 || today === 1 || today === 2 || today === 3) {
-        setIsDisabled(false);
-      } else {
+    const checkDate = () => {
+      const today = new Date();
+      const Deadlinedate = today >= new Date(2025, 0, 5); // January is 0-based
+
+      if (Deadlinedate ) {
         setIsDisabled(true);
+      } else {
+        setIsDisabled(false);
       }
     };
 
     fetchDocumentCount();
-    checkDayOfWeek();
+    checkDate();
   }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-   
 
     const docRef = doc(
       db,
@@ -89,35 +65,33 @@ const WcbaLeague = () => {
           Lastname: lastname,
           Email: email,
           ContactNumber: contactnum,
-          Status:"unpaid",
-        
+          Status: "unpaid",
         },
         { merge: true }
       );
 
-      // const templateParams = {
-      //   firstname: firstname,
-      //   lastname: lastname,
-      //   email: email,
-     
-      // };
+      const templateParams = {
+        firstname,
+        lastname,
+        email,
+      };
 
-      // emailjs
-      //   .send(
-      //     "service_615y0s3",
-      //     "template_iotobqh",
-      //     templateParams,
-      //     "VQdPf1Ssy_pj3-ern"
-      //   )
-      //   .then(
-      //     () => {
-      //       alert("Registration and email confirmation successful!");
-      //       navigate("/dashboard");
-      //     },
-      //     (error) => {
-      //       setError("Email confirmation failed: " + error.text);
-      //     }
-      //   );
+      emailjs
+        .send(
+          "service_615y0s3",
+          "template_iotobqh",
+          templateParams,
+          "VQdPf1Ssy_pj3-ern"
+        )
+        .then(
+          () => {
+            alert("Registration and email confirmation successful!");
+            navigate("/dashboard");
+          },
+          (error) => {
+            setError("Email confirmation failed: " + error.text);
+          }
+        );
     } catch (error) {
       setError("Error writing document: " + error.message);
     }
@@ -131,12 +105,15 @@ const WcbaLeague = () => {
             <nav className="nav">
               <ul className="nav__list">
                 <li className="nav__item">
-                  <Link to="/wcbaleague" className="nav__link active">Registration</Link>
+                  <Link to="/wcbaleague" className="nav__link active">
+                    Registration
+                  </Link>
                 </li>
                 <li className="nav__item">
-                  <Link to="/registeredplayersleaguewcba" className="nav__link">Registered Players</Link>
+                  <Link to="/registeredplayersleaguewcba" className="nav__link">
+                    Registered Players
+                  </Link>
                 </li>
-              
               </ul>
             </nav>
           </div>
@@ -150,7 +127,7 @@ const WcbaLeague = () => {
           alt="WCBA Logo"
         />
         {error && <p className="error-message text-red-500">{error}</p>}
-        <p className="text-green-500">Registered Players Today: {docCount}/30</p>
+        <p className="text-green-500">Registered Players Today: {docCount}/100</p>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="firstname">First name</label>

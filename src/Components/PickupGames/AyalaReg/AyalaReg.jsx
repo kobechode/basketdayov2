@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { db, app } from "../../Firebaseconfig"; // Firebase config
+import { db,app } from "../../../Firebaseconfig"
 import { doc, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import "./AyalaReg.css";

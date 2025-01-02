@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { database,app } from '../../Firebaseconfig'; // Firebase config
-import { db } from "../../Firebaseconfig"; // Firebase config
+ 
+import { db,database,app } from "../../../Firebaseconfig"
 import { doc, setDoc } from "firebase/firestore";
  
  

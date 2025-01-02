@@ -69,7 +69,7 @@ const PickupDashboard = () => {
                 to arrive on time and bring the necessary gear to participate.
               </p>
             </div>
-            <Link to="/wsbcreg">Join now</Link>
+            <Link to="">Join now</Link>
           </div>
 
           {/* Project 2 */}
@@ -109,7 +109,7 @@ const PickupDashboard = () => {
                 do eiusmod tempor incididunt ut labore et dolore magna.
               </p>
             </div>
-            <Link to="/teachersreg">Join now</Link>
+            <Link to="">Join now</Link>
           </div>
 
           {/* Project 4 */}
@@ -127,7 +127,7 @@ const PickupDashboard = () => {
                 do eiusmod tempor incididunt ut labore et dolore magna.
               </p>
             </div>
-            <Link to="/ayalareg">Join now</Link>
+            <Link to="">Join now</Link>
           </div>
         </div>
       </div>

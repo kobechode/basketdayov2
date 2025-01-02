@@ -6,16 +6,16 @@ import DashboardJs from './Components/Dashboard/Dashboard';
 import SignUp from './Components/Login/SignUp/SignUp';
 import Dashboard from './Components/Dashboard/Dashboard';
 import PickupDashboard from './Components/PickupGames/PickupDashboard';
-import WsbcReg from './Components/WSBC_REGFORM/Wsbc_Form';
-import WcbaReg from './Components/WCBA_REGFORM/Wcba_form';
-import TeachersReg from './Components/Teachers_Regform/Teachers_Regform';
-import AyalaReg from './Components/AyalaReg/AyalaReg';
+import WsbcReg from './Components/PickupGames/WSBC_REGFORM/Wsbc_Form';
+import WcbaReg from './Components/PickupGames/WCBA_REGFORM/Wcba_form';
+import TeachersReg from './Components/PickupGames/Teachers_Regform/Teachers_Regform';
+import AyalaReg from './Components/PickupGames/AyalaReg/AyalaReg';
 import TermsAndConditions from './Components/Terms And Condition Page/Terms';
-import TrainDash from './Components/TrainingDashboard/TrainDash';
-import BucalCamp from './Components/BucalCamp/BucalCamp';
-import LeagueDashboard from './Components/League_Dashboard/LeagueDash';
-import WcbaLeague from './Components/Wcba_League/WcbaLeague';
-import RegisteredPlayersWcba from './Components/Wcba_League/RegisteredPlayers';
+import TrainDash from './Components/TrainingCamp/TrainingDashboard/TrainDash';
+import BucalCamp from './Components/TrainingCamp/TrainingDashboard/BucalCamp/BucalCamp';
+import LeagueDashboard from './Components/Basketdayo_League/League_Dashboard/LeagueDash';
+import WcbaLeague from './Components/Basketdayo_League/Wcba_League/WcbaLeague';
+import RegisteredPlayersWcba from './Components/Basketdayo_League/Wcba_League/RegisteredPlayers';
 
 function App() {
   return (
