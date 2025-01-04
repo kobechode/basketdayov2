@@ -9,7 +9,7 @@ import './RegisteredPlayers.css';
 const RegisteredPlayersWcba = () => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1); // Current page
-  const [itemsPerPage, setItemsPerPage] = useState(3); // Items per page (3 items per page)
+  const [itemsPerPage, setItemsPerPage] = useState(5); // Items per page (3 items per page)
   const [searchQuery, setSearchQuery] = useState(""); // Search query
 
   // Handle data slicing for pagination
