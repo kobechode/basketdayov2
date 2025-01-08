@@ -33,7 +33,7 @@ const WcbaLeague = () => {
 
     const checkDate = () => {
       const today = new Date();
-      const Deadlinedate = today >= new Date(2025, 0, 5); // January is 0-based
+      const Deadlinedate = today >= new Date(2025, 0, 30); // January is 0-based
 
       if (Deadlinedate ) {
         setIsDisabled(true);
