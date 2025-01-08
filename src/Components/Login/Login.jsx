@@ -115,7 +115,7 @@ const Login = () => {
             onChange={handleTermsChange}
           />
           <label htmlFor="terms"> Review <Link to="/Terms">Terms and condition</Link></label>
-          <label htmlFor="terms"> I accept the   Terms and condition </label>
+          <label htmlFor="terms"> basahin muna ang terms and condition bago mag agree </label>
           {termsError && <p className="error-message text-red-500">{termsError}</p>}
         </div>
         <button type="submit" className="login-btn">Login</button>
