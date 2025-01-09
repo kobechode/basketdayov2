@@ -114,7 +114,7 @@ const Login = () => {
             checked={termsAccepted}
             onChange={handleTermsChange}
           />
-          <label htmlFor="terms"> Review <Link to="/Terms">Terms and condition</Link></label>
+          <label htmlFor="terms" className='text-red-500'> Review <Link to="/Terms">Terms and condition</Link></label>
           <label htmlFor="terms"> basahin muna ang terms and condition bago mag agree </label>
           {termsError && <p className="error-message text-red-500">{termsError}</p>}
         </div>
@@ -123,6 +123,8 @@ const Login = () => {
         
          
           <Link to="/signup">Create an Account</Link>
+          <br></br>
+          <Link to="/passwordreset">Forgot password</Link>
         </div>
       </form>
     </div>

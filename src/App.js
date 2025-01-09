@@ -16,6 +16,7 @@ import BucalCamp from './Components/TrainingCamp/TrainingDashboard/BucalCamp/Buc
 import LeagueDashboard from './Components/Basketdayo_League/League_Dashboard/LeagueDash';
 import WcbaLeague from './Components/Basketdayo_League/Wcba_League/WcbaLeague';
 import RegisteredPlayersWcba from './Components/Basketdayo_League/Wcba_League/RegisteredPlayers';
+import ForgotPassword from './Components/TrainingCamp/TrainingDashboard/PasswordReset/Passwordreset';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="/bucalcamp" element={<BucalCamp />} />
         <Route path="/leaguedash" element={<LeagueDashboard />} />
         <Route path="/wcbaleague" element={<WcbaLeague />} />
+        <Route path="/passwordreset" element={<ForgotPassword />} />
         <Route path="/registeredplayersleaguewcba" element={<RegisteredPlayersWcba />} />
       </Routes>
     </Router>
