@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../../../Firebaseconfig"
 import { doc, setDoc, collection, getDocs } from "firebase/firestore";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import "./wcba.css";
 
@@ -119,6 +119,27 @@ const WcbaReg = () => {
 
   return (
     <div className="signup-container_Wcba">
+
+        <header className="headerWcba">
+              <div className="container">
+                <div className="header__wrapper">
+                  <nav className="nav">
+                    <ul className="nav__list">
+                      <li className="nav__item">
+                        <Link to="/wcbaleague" className="nav__link active">
+                          Registration
+                        </Link>
+                      </li>
+                      <li className="nav__item">
+                        <Link to="/RegisteredWcba" className="nav__link">
+                          Registered Players
+                        </Link>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </header>
       <img
         className="w-[350px] h-[150px]"
         src="https://github.com/kobechode/CCT2/blob/master/WCBA.png?raw=true"

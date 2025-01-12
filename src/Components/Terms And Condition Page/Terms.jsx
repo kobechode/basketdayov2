@@ -53,6 +53,13 @@ const TermsAndConditions = () => {
         </p>
       </section>
 
+      <section className="terms-section">
+        <h2>7. Hygiene is a must</h2>
+        <p>
+           para sa mas maayos na laro kailangan ang players ay maayos ang hygiene
+        </p>
+      </section>
+
       <div className="navigation-links">
         <Link to="/" className="btn btn-primary">Back to Login</Link>
       </div>

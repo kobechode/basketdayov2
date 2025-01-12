@@ -17,6 +17,7 @@ import LeagueDashboard from './Components/Basketdayo_League/League_Dashboard/Lea
 import WcbaLeague from './Components/Basketdayo_League/Wcba_League/WcbaLeague';
 import RegisteredPlayersWcba from './Components/Basketdayo_League/Wcba_League/RegisteredPlayers';
 import ForgotPassword from './Components/TrainingCamp/TrainingDashboard/PasswordReset/Passwordreset';
+import RegisteredWcba from './Components/PickupGames/WCBA_REGFORM/RegisteredWcba';
 
 function App() {
   return (
@@ -38,7 +39,9 @@ function App() {
         <Route path="/leaguedash" element={<LeagueDashboard />} />
         <Route path="/wcbaleague" element={<WcbaLeague />} />
         <Route path="/passwordreset" element={<ForgotPassword />} />
+        <Route path="/RegisteredWcba" element={<RegisteredWcba />} />
         <Route path="/registeredplayersleaguewcba" element={<RegisteredPlayersWcba />} />
+
       </Routes>
     </Router>
     </div>
