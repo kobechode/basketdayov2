@@ -111,7 +111,7 @@ const RegisteredWcba = () => {
           <tr>
             <th>Firstname</th>
             <th>Lastname</th>
-            <th>Status</th>
+          
           </tr>
         </thead>
         <tbody>
@@ -119,7 +119,7 @@ const RegisteredWcba = () => {
             <tr key={item.id}>
               <td>{item.Firstname || 0}</td>
               <td>{item.Lastname || 0}</td>
-              <td>{item.Status || 0}</td>
+              
             </tr>
           ))}
         </tbody>
