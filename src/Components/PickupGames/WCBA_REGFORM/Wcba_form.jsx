@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { db } from "../../../Firebaseconfig"
+import { db } from "../../../Firebaseconfig";
 import { doc, setDoc, collection, getDocs } from "firebase/firestore";
-import { useNavigate,Link } from "react-router-dom";
-import emailjs from "@emailjs/browser";
+import { useNavigate, Link } from "react-router-dom";
 import "./wcba.css";
 
 const WcbaReg = () => {
@@ -21,12 +20,6 @@ const WcbaReg = () => {
     const wednesday = new Date(currentDate);
     wednesday.setDate(currentDate.getDate() + diffToWednesday);
     return wednesday.toISOString().split("T")[0]; // Default ISO format for Firestore
-  };
-
-  const formatWednesdayForEmail = (wednesdayDate) => {
-    const date = new Date(wednesdayDate);
-    const options = { month: "short", day: "numeric", year: "numeric" };
-    return date.toLocaleDateString("en-US", options).replace(",", ""); // Format as "Dec 18 2024"
   };
 
   useEffect(() => {
@@ -62,7 +55,6 @@ const WcbaReg = () => {
     e.preventDefault();
 
     const wednesdayDate = getWednesdayOfTheWeek(new Date());
-    const wednesdayFormattedForEmail = formatWednesdayForEmail(wednesdayDate);
 
     const docRef = doc(
       db,
@@ -86,32 +78,8 @@ const WcbaReg = () => {
       );
       console.log("Document written successfully!");
 
-      // Send email using EmailJS
-      const templateParams = {
-        firstname: firstname,
-        lastname: lastname,
-        email: email,
-        wednesday_date: wednesdayFormattedForEmail, // Send formatted date to EmailJS
-      };
-
-      emailjs
-        .send(
-          "service_615y0s3",
-          "template_iotobqh",
-          templateParams,
-          "VQdPf1Ssy_pj3-ern"
-        )
-        .then(
-          () => {
-            console.log("SUCCESS!");
-            alert("Registration and email confirmation successful!");
-            navigate("/dashboard");
-          },
-          (error) => {
-            console.log("FAILED...", error.text);
-            setError("Email confirmation failed: " + error.text);
-          }
-        );
+      alert("Registration successful!");
+      navigate("/dashboard");
     } catch (error) {
       setError("Error writing document: " + error.message);
     }
@@ -119,27 +87,26 @@ const WcbaReg = () => {
 
   return (
     <div className="signup-container_Wcba">
-
-        <header className="headerWcba">
-              <div className="container">
-                <div className="header__wrapper">
-                  <nav className="nav">
-                    <ul className="nav__list">
-                      <li className="nav__item">
-                        <Link to="/wcbaleague" className="nav__link active">
-                          Registration
-                        </Link>
-                      </li>
-                      <li className="nav__item">
-                        <Link to="/RegisteredWcba" className="nav__link">
-                          Registered Players
-                        </Link>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-              </div>
-            </header>
+      <header className="headerWcba">
+        <div className="container">
+          <div className="header__wrapper">
+            <nav className="nav">
+              <ul className="nav__list">
+                <li className="nav__item">
+                  <Link to="/wcbaleague" className="nav__link active">
+                    Registration
+                  </Link>
+                </li>
+                <li className="nav__item">
+                  <Link to="/RegisteredWcba" className="nav__link">
+                    Registered Players
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
       <img
         className="w-[350px] h-[150px]"
         src="https://github.com/kobechode/CCT2/blob/master/WCBA.png?raw=true"
