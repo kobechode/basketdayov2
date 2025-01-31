@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Login.css';
 import { auth } from '../../Firebaseconfig';
-import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, signInWithRedirect } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
@@ -50,7 +50,7 @@ const Login = () => {
   };
 
   const handleGoogleSignIn = () => {
-    signInWithPopup(auth, provider)
+    signInWithRedirect(auth, provider)
       .then((result) => {
         const user = result.user;
         setEmail(user.email);
