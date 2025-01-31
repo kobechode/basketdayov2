@@ -22,7 +22,7 @@
     .login-container {
       /* background: white; */
       background: linear-gradient(to right, #15201d,#061013);
-            padding: 30px;
+            padding: 60px;
             border-radius: 10px;
             width: 350px;
             text-align: center;
@@ -99,6 +99,32 @@
     .login-links a:hover {
       color: #0056b3;
     }
+    .google-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background-color: #fff;
+      color: #000;
+      border: 1px solid #ccc;
+      padding: 1px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      position: relative;
+      top: 6rem;
+      left: 2rem;
+
+      transition: background-color 0.3s ease;
+    }
+  
+    .google-btn:hover {
+      background-color: #f0f0f0;
+    }
+  
+    .google-icon {
+      font-size: 20px;
+    }
  
     input[type="checkbox"] {
     margin-left: 9rem;
@@ -108,14 +134,14 @@
 
     @media screen and (max-width: 768px) {
       .login-container {
-        padding: 20px;
+        padding: 60px;
         width: 90%; /* Make it wider to fill the screen */
       }
 
       input[type="checkbox"] {
-        margin-left: 3rem;
+        margin-left: 6rem;
         position: relative;
-        top: 75px; /* Moves the checkbox down */
+        top: 80px; /* Moves the checkbox down */
         }
     
       h2 {
@@ -132,47 +158,45 @@
         font-size: 0.9rem;
         padding: 8px;
       }
+
+      .google-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background-color: #fff;
+        color: #000;
+        border: 1px solid #ccc;
+        padding: 1px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        position: relative;
+        top: 6rem;
+        left: 1rem;
+  
+        transition: background-color 0.3s ease;
+      }
+    
+      .google-btn:hover {
+        background-color: #f0f0f0;
+      }
+    
+      .google-icon {
+        font-size: 20px;
+      }
     }
     
     /* For Mobile Devices */
-    @media screen and (max-width: 480px) {
-      .login-container {
-        padding: 15px;
-      }
-
-      input[type="checkbox"] {
-        margin-left: 7rem;
-        position: relative;
-        top: 80px; /* Moves the checkbox down */
-        }
-    
-      h2 {
-        font-size: 1.2rem;
-      }
-    
-      input[type="text"],
-      input[type="password"] {
-        font-size: 0.8rem;
-        padding: 6px;
-      }
-    
-      .login-btn {
-        font-size: 0.8rem;
-        padding: 6px;
-      }
-    
-      .login-links a {
-        font-size: 0.9rem;
-      }
-    }
+   
 
      @media screen and (max-width: 480px) {
       .login-container {
-        padding: 15px;
+        padding: 60px;
       }
 
       input[type="checkbox"] {
-        margin-left: 5rem;
+        margin-left: 6rem;
         position: relative;
         top: 75px; /* Moves the checkbox down */
         }

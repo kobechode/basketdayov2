@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import './Login.css';
-import { auth } from '../../Firebaseconfig'; // Firebase config
-import { signInWithEmailAndPassword, signOut } from 'firebase/auth';
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { auth } from '../../Firebaseconfig';
+import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { FcGoogle } from 'react-icons/fc';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -15,67 +16,47 @@ const Login = () => {
   const [termsError, setTermsError] = useState('');
   const navigate = useNavigate();
 
-  const validateEmail = (email) => {
-    const emailRegex = /\S+@\S+\.\S+/;
-    return emailRegex.test(email);
-  };
+  const provider = new GoogleAuthProvider();
 
-  const validatePassword = (password) => {
-    return password.length >= 6;
-  };
+  const validateEmail = (email) => /\S+@\S+\.\S+/.test(email);
+  const validatePassword = (password) => password.length >= 6;
 
   const handleEmailChange = (e) => {
     const value = e.target.value;
     setEmail(value);
-    if (!validateEmail(value)) {
-      setEmailError("Please enter a valid email address.");
-    } else {
-      setEmailError('');
-    }
+    setEmailError(validateEmail(value) ? '' : 'Please enter a valid email address.');
   };
 
   const handlePasswordChange = (e) => {
     const value = e.target.value;
     setPassword(value);
-    if (!validatePassword(value)) {
-      setPasswordError("Password must be at least 6 characters long.");
-    } else {
-      setPasswordError('');
-    }
+    setPasswordError(validatePassword(value) ? '' : 'Password must be at least 6 characters long.');
   };
 
   const handleTermsChange = (e) => {
     setTermsAccepted(e.target.checked);
-    if (e.target.checked) {
-      setTermsError('');
-    }
+    setTermsError(e.target.checked ? '' : '');
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!validateEmail(email)) {
-      setError("Invalid email address.");
-      return;
-    }
-    if (!validatePassword(password)) {
-      setError("Password must be at least 6 characters long.");
-      return;
-    }
-    if (!termsAccepted) {
-      setTermsError("You must accept the terms and conditions to proceed.");
-      return;
-    }
+    if (!validateEmail(email)) return setError('Invalid email address.');
+    if (!validatePassword(password)) return setError('Password must be at least 6 characters long.');
+    if (!termsAccepted) return setTermsError('You must accept the terms and conditions to proceed.');
 
     signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log('User signed in:', user);
-        navigate("/dashboard");
-        setError('');
+      .then(() => navigate('/dashboard'))
+      .catch(() => setError('The credentials you entered are invalid.'));
+  };
+
+  const handleGoogleSignIn = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+        setEmail(user.email);
+        navigate('/dashboard');
       })
-      .catch((error) => {
-        setError("The credentials you entered are invalid.");
-      });
+      .catch(() => setError('Google sign-in failed.'));
   };
 
   return (
@@ -84,47 +65,29 @@ const Login = () => {
       {error && <p className="error-message text-red-500">{error}</p>}
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="username">Email</label>
-          <input
-            type="text"
-            id="username"
-            placeholder="Enter your username"
-            value={email}
-            onChange={handleEmailChange}
-            required
-          />
+          <label htmlFor="email">Email</label>
+          <input type="text" id="email" placeholder="Enter your email" value={email} onChange={handleEmailChange} required />
           {emailError && <p className="error-message text-red-500">{emailError}</p>}
         </div>
         <div className="form-group">
           <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            placeholder="Enter your password"
-            value={password}
-            onChange={handlePasswordChange}
-            required
-          />
+          <input type="password" id="password" placeholder="Enter your password" value={password} onChange={handlePasswordChange} required />
           {passwordError && <p className="error-message text-red-500">{passwordError}</p>}
         </div>
         <div className="form-group">
-          <input
-            type="checkbox"
-            id="terms"
-            checked={termsAccepted}
-            onChange={handleTermsChange}
-          />
-          <label htmlFor="terms" className='text-red-500'> Review <Link to="/Terms">Terms and condition</Link></label>
-          <label htmlFor="terms"> basahin muna ang terms and condition bago mag agree </label>
+          <input type="checkbox" id="terms" checked={termsAccepted} onChange={handleTermsChange} />
+          <label htmlFor="terms" className="text-red-500"> Review <Link to="/Terms">Terms and Conditions</Link></label>
+          <label htmlFor="terms"> click here to agree </label>
           {termsError && <p className="error-message text-red-500">{termsError}</p>}
         </div>
         <button type="submit" className="login-btn">Login</button>
+        <button type="button" className="google-btn" onClick={handleGoogleSignIn}>
+          <FcGoogle className="google-icon" /> Sign in with Google
+        </button>
         <div className="login-links">
-        
-         
           <Link to="/signup">Create an Account</Link>
-          <br></br>
-          <Link to="/passwordreset">Forgot password</Link>
+          <br />
+          <Link to="/passwordreset">Forgot Password</Link>
         </div>
       </form>
     </div>
