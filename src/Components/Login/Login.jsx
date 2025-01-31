@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Login.css';
 import { auth } from '../../Firebaseconfig';
-import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, signInWithRedirect } from 'firebase/auth';
+import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
+import { onAuthStateChanged } from 'firebase/auth';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -52,12 +53,31 @@ const Login = () => {
   const handleGoogleSignIn = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
-        const user = result.user;
-        setEmail(user.email);
-        navigate('/dashboard');
+        console.log("Google Sign-In Success:", result); // Debugging
+        if (result.user) {
+          console.log("User Email:", result.user.email);
+          setEmail(result.user.email);
+          navigate('/dashboard');
+        }
       })
-      .catch(() => setError('Google sign-in failed.'));
+      .catch((error) => {
+        console.error("Google Sign-In Error:", error); // Debugging
+        setError('Google sign-in failed.');
+      });
   };
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log("User is signed in:", user);
+        navigate('/dashboard');
+      } else {
+        console.log("No user signed in");
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   return (
     <div className="login-container p-1 bg-white rounded-xl">
