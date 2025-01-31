@@ -54,10 +54,21 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         setEmail(user.email);
-        navigate('/dashboard');
+        
+        // Show alert
+        alert('You are logged in successfully with Google!');
+        
+        // Hide alert after 3 seconds
+        setTimeout(() => {
+          setError('');
+          navigate('/dashboard');
+        }, 1000); // 3000 ms = 3 seconds
       })
-      .catch(() => setError('Google sign-in failed.'));
+      .catch(() => {
+        setError('Google sign-in failed.');
+      });
   };
+  
 
   return (
     <div className="login-container p-1 bg-white rounded-xl">
