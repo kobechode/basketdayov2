@@ -50,7 +50,7 @@ const Login = () => {
   };
 
   const handleGoogleSignIn = () => {
-    signInWithRedirect(auth, provider)
+    signInWithPopup(auth, provider)
       .then((result) => {
         const user = result.user;
         setEmail(user.email);
